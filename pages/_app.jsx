@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import { FaWhatsapp } from "react-icons/fa";
 import Link from 'next/link'
 import '@/styles/globals.css'
+import Footer2 from "@/components/Footer2";
 import Head from 'next/head'
 import { useState, useEffect, createContext, useContext,oneMinusQty } from 'react'
 import Headroom from 'react-headroom'
@@ -56,7 +57,7 @@ export default function App({ Component, pageProps }) {
         <Component />
      
     <ContactAndSubscribe />
-    <Footer />
+    <Footer2 />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
