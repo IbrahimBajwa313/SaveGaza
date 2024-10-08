@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LabelList, Cell } from 'recharts';
+import { scaleLog } from 'd3-scale';
 
 const data = [
-  { Category: 'People Killed', Total: 20000 },
-  { Category: 'Children Killed', Total: 29000 },
-  { Category: 'Bombs Dropped', Total: 58000 },
-  { Category: 'People Displaced', Total: 34000 },
-  { Category: 'Buildings Destroyed', Total: 34000 },
+  { Category: 'People Displaced', Total: 1500000 },
+  { Category: 'People Killed', Total: 186000 },
+  { Category: 'Children Killed', Total: 26000 },
+  { Category: 'Bombs Dropped', Total: 50000 },
+  { Category: 'Buildings Destroyed', Total: 40000 },
 ];
 
 // Utility function to format numbers with commas
@@ -69,7 +70,7 @@ const EvacuationChart = () => {
         <ResponsiveContainer width="100%" height={300} className="">
           <BarChart 
             data={data} 
-            margin={{ top: 20, right: 30, left: 20, bottom: 50 }} 
+            margin={{ top: 30, right: 30, left: 20, bottom: 50 }} 
             barGap={0} // Reduces the gap between bars
             barCategoryGap="10%" // Controls the gap between categories
           >
@@ -82,9 +83,12 @@ const EvacuationChart = () => {
               tickLine={false} // Hide the tick lines
             />
             <YAxis
+              scale={scaleLog().base(10)} // Logarithmic scale
+              domain={[2500, 'dataMax']} // Set the domain for the Y-axis
               hide={true} // Hide the Y-axis
               axisLine={false} // Hide the Y-axis line
               tickLine={false} // Hide the tick lines
+              tickFormatter={formatNumber} // Format ticks with commas
             />
             <Tooltip
               contentStyle={{ backgroundColor: "#fffe", border: "none", borderRadius: "10px", boxShadow: "0 2px 4px rgba(255,255,255,0.1)" }}  // Tooltip background styling

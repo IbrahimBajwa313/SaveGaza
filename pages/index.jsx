@@ -13,6 +13,7 @@ import Reviews from "@/components/Reviews";
 import ImageSec from "./ImageSec";
 import './fontawesome';
 import UnitingPak from "@/components/UnitingPak";
+import ContactAndSubscribe from "@/components/ContactAndSubscribe";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -21,18 +22,19 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden w-screen z-20">
-      {/* <Wrapper> */}
       <HeroBanner />
-      <About />
-      <DeathToll />
-      <HowYouCanHelp />
-      <UnitingPak />
+      <Wrapper className="bg-blue-50 pt-20">
+        <About />
+        <DeathToll />
+        <HowYouCanHelp />
+        <UnitingPak />
 
-      {/* <ImageSec /> */}
-      <Reviews />
-      <FAQs />
-      <LeadersSlider />
-      {/* </Wrapper> */}
+        {/* <ImageSec /> */}
+        <Reviews />
+        <FAQs />
+        <ContactAndSubscribe />
+        <LeadersSlider />
+      </Wrapper>
     </main>
   );
 }

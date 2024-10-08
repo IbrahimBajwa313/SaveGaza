@@ -23,7 +23,7 @@ const handler = async (req, res) => {
     
     try {
       const reviews = await Review.find({});
-      console.log("Reviews from DB:", reviews); // Log the fetched reviews
+      // console.log("Reviews from DB:", reviews); // Log the fetched reviews
       res.status(200).json(reviews); // Send the reviews as the response
     } catch (error) {
       console.error("Error fetching reviews:", error); // Log the error

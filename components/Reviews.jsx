@@ -71,7 +71,7 @@ const Reviews = () => {
           <div className="flex flex-col md:flex-row gap-12">
             {/* Reviews Section */}
             <div className="w-full md:w-1/2">
-              {reviews.slice(0, 3).map((review, index) => (
+              {reviews.slice(-3).map((review, index) => (
                 <div
                   key={index}
                   className="bg-gray-100 dark:bg-gray-700 p-5 rounded-lg shadow-md transition-transform transform hover:scale-105 mb-6"
@@ -82,7 +82,8 @@ const Reviews = () => {
                       className="w-10 h-10 rounded-full flex justify-center items-center text-white text-lg font-bold"
                       style={{ backgroundColor: review.color }} // Use the assigned color
                     >
-                      {review.name[0].toUpperCase()}
+                      {review.name ? review.name[0].toUpperCase() : ""}
+
                     </div>
                     <div className="ml-4">
                       <h3 className="text-md font-semibold text-gray-900 dark:text-gray-100">
