@@ -88,7 +88,7 @@ export default function NewsPage() {
 
 
   return (
-    <div className='min-h-screen bg-blue-100 mx-auto  p-28 grid grid-cols-1 md:grid-cols-3 gap-4 '>
+    <div className='min-h-screen mx-auto  p-28 grid grid-cols-1 md:grid-cols-3 gap-4 '>
 
       <div className="news-card lg:m-5 md:m-3 m-6" >
         <div className="buttons flex justify-center">

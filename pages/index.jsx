@@ -35,8 +35,8 @@ export default function Home() {
         <FAQs />
       <NewsPage />
         <ContactAndSubscribe />
-        <LeadersSlider />
       </Wrapper>
+/        <LeadersSlider />
     </main>
   );
 }
