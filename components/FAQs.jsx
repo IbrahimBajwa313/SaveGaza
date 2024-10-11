@@ -35,19 +35,21 @@ const FAQs = () => {
   }, [activeIndex]);
 
   return (
-    <section className="bg-blue-50 dark:bg-gray-900 py-16 px-6">
+    <section className=" py-16 px-6">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 lg:p-12">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 text-black dark:text-white text-center">
+        <div className="bg-white rounded-3xl shadow-2xl p-8">
+          <h2 className="text-5xl font-bold mb-8 text-black text-center">
             Frequently Asked Questions
           </h2>
-          <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
+          <div className="flex flex-row gap-8">
             <div className="md:w-1/2">
-              <div className="space-y-4">
+              <div className="space-y-4 h-[60vh] overflow-y-scroll scrollbar-hide">
                 {faqs.map((faq, index) => (
-                  <div key={index} className="border-b border-gray-400 pb-4">
+                  <div key={index} className="">
                     <button
-                      className="w-full text-left py-4 flex justify-between items-center bg-green-600 hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-white transition duration-300 rounded-md px-4 shadow-md"
+                      className={`w-full text-left py-4 flex justify-between items-center ${
+                      activeIndex === index ? 'bg-[#D0312D]' : 'bg-[#22C55E]'
+                      } hover:bg-[#D0312D] focus:outline-none focus:ring-2 focus:ring-white transition duration-300 rounded-2xl px-4 shadow-md`}
                       onClick={() => toggleFAQ(index)}
                     >
                       <span className="text-lg font-semibold text-white">{faq.question}</span>
@@ -55,10 +57,13 @@ const FAQs = () => {
                     </button>
                     {activeIndex === index && (
                       <div
-                        className={`py-2 px-2 mt-2 bg-gray-100 dark:bg-gray-700 rounded-lg shadow-inner transition-all duration-300 ease-in-out ${animationClass}`}
+                        className={`py-2 px-2 mt-2 rounded-lg transition-all duration-300 ease-in-out ${animationClass}`}
                       >
-                        <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">{faq.answer}</p>
+                        <p className="text-gray-700 text-sm ">{faq.answer}</p>
                       </div>
+                    )}
+                    {index < faqs.length - 1 && (
+                      <hr className="border-gray-300 mt-6" />
                     )}
                   </div>
                 ))}
@@ -66,14 +71,14 @@ const FAQs = () => {
             </div>
 
             <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
-              <div className="rounded-lg overflow-hidden shadow-lg">
+              <div className="rounded-2xl h-[59.7vh] overflow-hidden shadow-lg">
                 <Image
                   src="/Picture1.png"
                   alt="Support Image"
                   layout="responsive"
                   width={500}
                   height={10000}
-                  className="rounded-lg transition-transform transform hover:scale-105 duration-300"
+                  className="rounded-lg scale-105 transition-transform transform hover:scale-110 duration-300"
                 />
               </div>
             </div>

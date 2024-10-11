@@ -56,7 +56,7 @@ const Reviews = () => {
       setTestimonial("");
     } else {
       alert("Failed to submit review");
-    }
+    } 
   };
 
   return (
@@ -64,16 +64,16 @@ const Reviews = () => {
       <div className="">
         <div className="p-12">
           <h1 className="text-5xl text-center font-extrabold mb-10">
-            Share Your Reviews
+            Review Our Efforts
           </h1>
 
           <div className="flex flex-row justify-center items-center gap-12">
             {/* Reviews Section */}
-            <div className="w-[50%]">
+            <div className="w-[50%] h-[70vh] overflow-y-scroll scrollbar-hide">
               {reviews.slice(-3).map((review, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 p-5 rounded-2xl shadow-lg transition-transform transform hover:scale-[1.02] mb-6"
+                  className="bg-gray-50 p-5 mx-2 rounded-2xl shadow-lg transition-transform transform hover:scale-[1.02] mb-6"
                 >
                   <div className="flex items-center mb-3">
                     {/* Avatar with First Letter of Name and Random Color */}
@@ -102,8 +102,8 @@ const Reviews = () => {
 
             {/* Review Submission Form Section */}
             <div className="w-[50%] flex justify-center items-center ">
-              <div className=" bg-gray-50 p-8 rounded-2xl shadow-lg">
-                <h3 className="text-3xl font-bold text-black mb-6 text-center">
+              <div className=" bg-gray-50 h-[70vh] p-8 rounded-2xl shadow-lg">
+                <h3 className="text-3xl font-bold text-black mb-12 text-center">
                   Share Your Remarks
                 </h3>
                 <form onSubmit={handleSubmit}>
@@ -113,7 +113,7 @@ const Reviews = () => {
                       <input
                         type="text"
                         id="name"
-                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-500 focus:outline-none"
+                        className="w-full p-3 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none"
                         placeholder="Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -124,7 +124,7 @@ const Reviews = () => {
                       <input
                         type="email"
                         id="email"
-                        className="w-full p-3 rounded-lg bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-500 focus:outline-none"
+                        className="w-full p-3 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none"
                         placeholder="Your Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -137,7 +137,7 @@ const Reviews = () => {
                   <div className="mb-6">
                     <textarea
                       id="testimonial"
-                      className="w-full p-4 rounded-lg bg-white dark:bg-gray-600 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-500 focus:outline-none"
+                      className="w-full p-4 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none"
                       rows="4"
                       placeholder="Share your experience..."
                       value={testimonial}
@@ -149,7 +149,7 @@ const Reviews = () => {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-green-600 dark:bg-gray-600 text-white p-4 rounded-lg hover:bg-black dark:hover:bg-gray-500 transition duration-300 focus:outline-none"
+                    className="w-full bg-green-600  text-white font-bold p-4 rounded-lg hover:bg-[#D0312D] transition duration-300 focus:outline-none"
                   >
                     Submit Review
                   </button>
