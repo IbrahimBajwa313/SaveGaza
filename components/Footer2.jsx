@@ -1,30 +1,38 @@
 import React from "react";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#111] text-white py-12">
+    <footer className="bg-[#111] text-white py-12 mt-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 gap-y-20 pb-12 border-b border-gray-700 px-6 lg:px-12">
         {/* Contact Info */}
         <div className="flex items-start">
           <i className="fa-solid fa-location-dot text-3xl text-[#206e3d] mr-4"></i>
           <div>
+            <Link
+              href={"https://maps.app.goo.gl/3XPDYJXN1Bn9kXQn8"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
             <h3 className="text-[#2b9150] font-bold mb-3">Find us</h3>
-            <p>1010 Avenue, SW 54321, Chandigarh</p>
+              SGC Office Office S#23, 3rd Floor, Malikabad Centre near 6th Rd,
+              Murree Rd, Rawalpindi
+            </Link>
           </div>
         </div>
         <div className="flex items-start">
           <i className="fa-solid fa-phone text-3xl text-[#2b9150] mr-4"></i>
           <div>
             <h3 className="text-[#2b9150] font-bold mb-3">Call us</h3>
-            <p>9876543210</p>
+            <p>+92 332 5900041</p>
           </div>
         </div>
         <div className="flex items-start">
           <i className="fa-solid fa-envelope-open text-3xl text-[#2b9150] mr-4"></i>
           <div>
             <h3 className="text-[#2b9150] font-bold mb-3">Mail us</h3>
-            <p>mail@info.com</p>
+            <p>tameer2k23@gmail.com</p>
           </div>
         </div>
 
@@ -38,16 +46,28 @@ const Footer = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
           <div className="flex space-x-4 mt-8">
-            <a href="#" className="text-3xl text-gray-400 hover:text-blue-600 transition-colors duration-200 ease-in-out">
+            <a
+              href="#"
+              className="text-3xl text-gray-400 hover:text-blue-600 transition-colors duration-200 ease-in-out"
+            >
               <i className="fab fa-facebook"></i>
             </a>
-            <a href="#" className="text-3xl text-gray-400 hover:text-red-500 transition-colors duration-200 ease-in-out">
+            <a
+              href="#"
+              className="text-3xl text-gray-400 hover:text-red-500 transition-colors duration-200 ease-in-out"
+            >
               <i className="fa-brands fa-youtube ml-8"></i>
             </a>
-            <a href="#" className="text-3xl text-gray-400 hover:text-blue-400 transition-colors duration-200 ease-in-out">
+            <a
+              href="#"
+              className="text-3xl text-gray-400 hover:text-blue-400 transition-colors duration-200 ease-in-out"
+            >
               <i className="fab fa-twitter ml-8"></i>
             </a>
-            <a href="#" className="text-3xl text-gray-400 hover:text-pink-700 transition-colors duration-200 ease-in-out">
+            <a
+              href="#"
+              className="text-3xl text-gray-400 hover:text-pink-700 transition-colors duration-200 ease-in-out"
+            >
               <i className="fa-brands fa-instagram ml-8"></i>
             </a>
           </div>
@@ -75,7 +95,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <a href="#" className="text-gray-400 hover:text-white">
-                  Our Services
+                  Our Goals
                 </a>
               </li>
             </ul>
@@ -87,7 +107,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <a href="#" className="text-gray-400 hover:text-white">
-                  Portfolio
+                  Leaders
                 </a>
               </li>
               <li className="mb-2">
@@ -97,7 +117,7 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <a href="#" className="text-gray-400 hover:text-white">
-                  Expert Team
+                  Press Realease
                 </a>
               </li>
             </ul>
@@ -108,7 +128,8 @@ const Footer = () => {
         <div>
           <h3 className="text-[#2b9150] font-bold mb-3">Subscribe</h3>
           <p className="text-gray-400 mb-3">
-            Don’t miss to subscribe to our new feeds. Kindly fill the form below.
+            Don’t miss to subscribe to our new feeds. Kindly fill the form
+            below.
           </p>
           <form className="flex">
             <input
@@ -126,7 +147,8 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="container mx-auto text-center py-6 px-6">
         <p className="text-gray-400 mb-4">
-          Copyright © 2018. All Rights Reserved <span className="text-[#2b9150]">Anup</span>
+          Copyright © 2024. All Rights Reserved{" "}
+          <span className="text-[#2b9150]">Sava Gaza Campaign</span>
         </p>
         <div className="space-x-4">
           <a href="#" className="text-gray-400 hover:text-white">
