@@ -40,10 +40,10 @@ const Footer = () => {
         <div className="md:col-span-1">
           <h1 className="text-2xl font-bold mb-3 flex items-center">
             <img src="./save-gaza-logo.png" className="w-8 mr-4" alt="Logo" />
-            <span className="text-[#2b9150]">WEB DESIGNER</span>
+            <span className="text-[#2b9150]">Save Gaza Campaign</span>
           </h1>
           <p className="text-gray-400 mb-5">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Stand for Gaza & Unite for Gaza
           </p>
           <div className="flex space-x-4 mt-8">
             <a
