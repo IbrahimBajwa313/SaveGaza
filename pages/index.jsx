@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import HeroBanner from "@/components/HeroBanner";
 import DeathToll from "@/components/DeathToll";
-import Footer2 from "@/components/Footer2";
 import About from "@/components/About";
 import FAQs from "@/components/FAQs"; 
 import LeadersSlider from "@/components/LeadersSlider";
@@ -32,9 +31,9 @@ export default function Home() {
         {/* <ImageSec /> */}
         <Reviews />
         <FAQs />
-        <ContactAndSubscribe />
         <LeadersSlider />
-      </Wrapper>
+      </Wrapper>      
+      <ContactAndSubscribe />
     </main>
   );
 }
