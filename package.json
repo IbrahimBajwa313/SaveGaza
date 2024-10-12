@@ -32,6 +32,7 @@
     "react-headroom": "^3.2.1",
     "react-hook-inview": "^4.5.0",
     "react-icons": "^5.0.1",
+    "react-intersection-observer": "^9.13.1",
     "react-locomotive-scroll": "^0.2.2",
     "react-markdown": "^8.0.5",
     "react-multi-carousel": "^2.8.2",

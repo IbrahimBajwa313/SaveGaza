@@ -88,18 +88,20 @@ export default function NewsPage() {
 
 
   return (
-    <div className='min-h-screen bg-blue-200 mx-auto mt-5 py-5 px-5 grid grid-cols-1 md:grid-cols-3 gap-4 '>
+    <div className='min-h-screen mx-auto  p-28 grid grid-cols-1 md:grid-cols-3 gap-4 '>
 
       <div className="news-card lg:m-5 md:m-3 m-6" >
         <div className="buttons flex justify-center">
-          <div className={`w-full rounded-t-lg header flex justify-center items-center bg-blue-800 hover:bg-blue-950 hover:cursor-pointer text-white font-bold lg:p-2 md:p-1 p-2 lg:me-3 md:me-2 me-1 transition-all duration-200 ${press ? 'bg-blue-950' : 'bg-blue-800'}`} onClick={() => setPress(true)}>
+          <div className={`w-full rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] hover:bg-[#3d7a53] hover:cursor-pointer text-white font-bold lg:p-2 md:p-1 p-2
+           lg:me-3 md:me-2 me-1 transition-all duration-200 ${press ? 'bg-[#3d7a53]' : 'bg-[#22C55E]'}`} onClick={() => setPress(true)}>
             Press Release
           </div>
-          <div className={`w-full rounded-t-lg header flex justify-center items-center bg-blue-800 hover:bg-blue-950 hover:cursor-pointer text-white font-bold lg:p-2 md:p-1 p-2 lg:ms-3 md:ms-2 ms-1 transition-all duration-200 ${!press ? 'bg-blue-950' : 'bg-blue-800'}`} onClick={() => setPress(false)}>
+          <div className={`w-full rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] hover:bg-blue-950 hover:cursor-pointer text-white font-bold lg:p-2 md:p-1 p-2 
+          lg:ms-3 md:ms-2 ms-1 transition-all duration-200 ${!press ? 'bg-[#D0312D]' : 'bg-[#22C55E]'}`} onClick={() => setPress(false)}>
             Video
           </div>
         </div>
-        <div className="scrollbar rounded-b-lg p-5 bg-white w-full  overflow-y-auto" style={{ height: '90vh' }}>
+        <div className="scrollbar rounded-b-lg p-5 shadow-2xl bg-white w-full  overflow-y-auto scrollbar-hide" style={{ height: '90vh' }}>
           {press && (<div className="press-rel-cards flex-col justify-center items-center space-y-6 my-3">
             {press_rel.map((card) => (
               <div
@@ -127,10 +129,10 @@ export default function NewsPage() {
       </div>
 
       <div className="events-card lg:m-5 md:m-3 m-6 " >
-        <div className="rounded-t-lg header flex justify-center items-center bg-blue-800 text-white font-bold py-2 hover:bg-blue-950 hover:cursor-pointer transition-all duration-200">
+        <div className="rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] text-white font-bold py-2 ">
           Events
         </div>
-        <div className="scrollbar rounded-b-lg p-5 bg-white w-full   overflow-y-auto" style={{ height: '90vh' }}>
+        <div className="scrollbar rounded-b-lg p-5 bg-white w-full shadow-2xl scrollbar-hide  overflow-y-auto" style={{ height: '90vh' }}>
           {events.map((ev) => (
             <div
               key={ev.id}
@@ -149,7 +151,8 @@ export default function NewsPage() {
 
       <div className="social-media-card lg:m-5 md:m-3 m-6" >
         <div className="buttons flex justify-center">
-          <div className={`w-full rounded-t-lg header flex justify-center items-center bg-blue-800 hover:bg-blue-950 hover:cursor-pointer text-white font-bold p-2 lg:me-3 md:me-2 transition-all duration-200 ${fb ? 'bg-blue-950' : 'bg-blue-800'}`}
+          <div className={`w-full rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] hover:bg-[#3d7a53] hover:cursor-pointer text-white font-bold p-2 lg:me-3 
+          md:me-2 transition-all duration-200 ${fb ? 'bg-[#3d7a53]' : 'bg-[#22C55E]'}`}
             onClick={() => {
               setFB(true);
               setInsta(false);
@@ -158,7 +161,8 @@ export default function NewsPage() {
           >
             <FontAwesomeIcon icon={faFacebookF} className='text-xl' />
           </div>
-          <div className={`w-full rounded-t-lg header flex justify-center items-center bg-blue-800 hover:bg-blue-950 hover:cursor-pointer text-white font-bold p-2 me-1 ms-1 transition-all duration-200 ${insta ? 'bg-blue-950' : 'bg-blue-800'}`}
+          <div className={`w-full rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] hover:bg-[#3d7a53] hover:cursor-pointer text-white font-bold p-2 me-1 ms
+          -1 transition-all duration-200 ${insta ? 'bg-[#3d7a53]' : 'bg-[#22C55E]'}`}
             onClick={() => {
               setFB(false);
               setInsta(true);
@@ -167,7 +171,8 @@ export default function NewsPage() {
           >
             <FontAwesomeIcon icon={faInstagram} className='text-xl' />
           </div>
-          <div className={`w-full rounded-t-lg header flex justify-center items-center bg-blue-800 hover:bg-blue-950 hover:cursor-pointer text-white font-bold p-2 lg:ms-3 md:ms-2 transition-all duration-200 ${x ? 'bg-blue-950' : 'bg-blue-800'}`}
+          <div className={`w-full rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] hover:bg-[#3d7a53] hover:cursor-pointer text-white font-bold p-2 lg:ms-3 
+          md:ms-2 transition-all duration-200 ${x ? 'bg-[#3d7a53]' : 'bg-[#22C55E]'}`}
             onClick={() => {
               setFB(false);
               setInsta(false);
@@ -177,7 +182,7 @@ export default function NewsPage() {
             <FontAwesomeIcon icon={faTwitter} className='text-xl' />
           </div>
         </div>
-        <div className="news-card rounded-b-lg p-5 bg-white w-full " style={{ height: '90vh' }}>
+        <div className="news-card rounded-b-lg p-5 bg-white shadow-2xl w-full " style={{ height: '90vh' }}>
           {fb && (<div>Facebook Posts</div>)}
           {insta && (<div>Insta Posts</div>)}
           {x && (<div>Twitter Posts</div>)}

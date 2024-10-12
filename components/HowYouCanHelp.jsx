@@ -42,7 +42,7 @@ const MediaAboutUs = () => {
     <section className="py-12">
       <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
 
-        <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight text-[#22C55E]  mb-4">
+        <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight text-[#000]  mb-4">
                 Save Gaza Campaign <span className="text-black ">Needs You </span>
               </h1>
         <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-[#D0312D]">

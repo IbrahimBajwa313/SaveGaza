@@ -6,11 +6,11 @@ const ContactAndSubscribe = () => {
   return (
     <div className="flex flex-col lg:flex-row justify-center items-center gap-20 bg-blue-50 p-8 min-h-screen">
       {/* Contact Section */}
-      <div className="bg-white p-8 rounded-2xl shadow-xl max-w-sm flex-grow">
-        <h1 className="text-4xl font-extrabold ms-14 mb-6">Contact us</h1>
+      <div className="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full flex-grow">
+        <h1 className="text-4xl font-extrabold text-center mb-6">Contact us</h1>
         <div className="space-y-6">
           {/* Address */}
-          <div className="flex ms-14 items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <FaMapMarkerAlt className="text-pink-500 w-7 h-7" />
             <div>
             <p className="text-2xl font-bold">Address</p>
@@ -26,7 +26,7 @@ const ContactAndSubscribe = () => {
         </div>
 
           {/* Phone */}
-          <div className="flex ms-14 items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <FaPhoneAlt className="text-yellow-500 w-7 h-7" />
             <div>
               <p className="text-2xl font-bold">Phone</p>
@@ -34,7 +34,7 @@ const ContactAndSubscribe = () => {
             </div>
           </div>
           {/* Email */}
-          <div className="flex ms-14 items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <FaEnvelope className="text-blue-500 w-7 h-7" />
             <div>
               <p className="text-2xl font-bold">Email</p>
@@ -48,7 +48,7 @@ const ContactAndSubscribe = () => {
       </div>
 
       {/* Subscribe Section c:\Users\SMART TECH\Desktop\Picture2.png */}
-      <div className="bg-white p-8 rounded-2xl shadow-xl max-w-2xl w-full flex flex-col justify-center items-center text-center">
+      <div className="bg-white p-8 rounded-2xl shadow-xl max-w-2xl w-full h-[60vh] flex flex-col justify-center items-center text-center">
 
       <Image
                   src="/Picture2.png"
