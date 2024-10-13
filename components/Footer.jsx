@@ -133,7 +133,7 @@ export default function Footer() {
                     </Link>
                     <Link href="/site-map" className="text-[12px] text-white/[0.5] hover:text-white" target="_blank">
                         Site Map
-                    </Link>
+                    </Link>         
                 </div>
                 {/* RIGHT END */}
             </Wrapper>
