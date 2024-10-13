@@ -1,4 +1,3 @@
-import ContactAndSubscribe from '@/components/ContactAndSubscribe'
 import Footer2 from '@/components/Footer2'
 import Header from '@/components/Header'
 import { FaWhatsapp } from "react-icons/fa";

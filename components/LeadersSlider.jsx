@@ -110,8 +110,8 @@ const LeadersSlider = () => {
         >
           {leaders.map((leader, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white p-4 rounded-lg shadow-lg relative z-10 flex flex-col items-center justify-center lg:h-80"> {/* Fixed height for uniformity */}
-                <div className="relative w-32 h-32 mb-4"> {/* Responsive image size */}
+              <div className="bg-white p-4 rounded-lg shadow-lg relative z-10 flex flex-col items-center justify-center">
+                <div className="relative w-32 h-32 mb-4">
                   <Image
                     src={leader.image}
                     alt={leader.name}

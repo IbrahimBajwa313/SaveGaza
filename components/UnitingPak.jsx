@@ -12,11 +12,11 @@ const UnitingPak = () => {
   return (
     <section className="py-16">
       <div className="bg-gray-50 rounded-3xl shadow-lg lg:p-12">
-        <div className="flex flex-row items-center p-6">
+        <div className="flex flex-col lg:flex-row items-center p-6">
           
           {/* Left Side - Image */}
-          <div className="w-full pr-20">
-            <div className="relative h-[400px] ">
+          <div className="w-full lg:w-1/2 lg:pr-20">
+            <div className="relative h-64 lg:h-[400px]">
               <Image
                 src="/Gaza.webp"
                 alt="Save Gaza Campaign"
@@ -28,11 +28,11 @@ const UnitingPak = () => {
           </div>
 
           {/* Right Side - Text */}
-          <div className="w-[100%] flex flex-col justify-between">
-            <h1 className="text-6xl font-extrabold leading-tight text-black mb-4">
+          <div className="w-full lg:w-1/2 flex flex-col justify-between mt-6 lg:mt-0">
+            <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight text-black mb-4">
               Uniting <span className="text-[#22C55E]">Pakistan</span>
             </h1>
-            <p className="text-xl my-4">
+            <p className="text-lg lg:text-xl my-4">
               Save Gaza Campaign, initiated in November 2023 by Ms. Humaira Tayyaba and a small group, burgeoned into a nationwide movement driven by the 
               solidarity of Pakistanis with the suffering Palestinians. Evolving from civil society roots, it swiftly gained momentum, organizing protests, 
               engaging diverse sectors, and expanding across Pakistan.

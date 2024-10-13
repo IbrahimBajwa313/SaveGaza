@@ -15,7 +15,7 @@ const MediaAboutUs = () => {
     {
       id: 2,
       image: "/protest.jpg", // Replace with your image path
-      title: "Join Us as Your University Ambasador",
+      title: "Join Us as Your University Ambassador",
       source: "Donate #donate",
       date: "26.04.2024",
       link: "/article2", // Replace with your link
@@ -41,14 +41,12 @@ const MediaAboutUs = () => {
   return (
     <section className="py-12">
       <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-
-        <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight text-[#000]  mb-4">
-                Save Gaza Campaign <span className="text-black ">Needs You </span>
-              </h1>
+        <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight text-[#000] mb-4">
+          Save Gaza Campaign <span className="text-black">Needs You</span>
+        </h1>
         <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-[#D0312D]">
           How You Can Help
         </h2>
-
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
           {articles.map((article) => (
@@ -61,19 +59,21 @@ const MediaAboutUs = () => {
                 alt={article.title}
                 className="rounded-2xl mb-4"
                 layout="responsive"
-                width={700} // Increased width
-                height={400} // Increased height
+                width={700} // Adjust based on design
+                height={400} // Adjust based on design
+                objectFit="cover" // Maintain aspect ratio
               />
-              <p className="text-left text-gray-600 font-semibold mb-2">
-                {article.source}
-              </p>
+              <div className="text-left mb-2">
+                <p className="text-gray-600 font-semibold">{article.source}</p>
+                <p className="text-gray-500 text-sm">{article.date}</p>
+              </div>
               <h3 className="text-left text-base font-bold mb-4 text-black">
                 {article.title}
               </h3>
               <div className="text-right mt-4">
                 <Link
                   href={article.link}
-                  className="px-4  py-2 bg-[#22C55E] text-lg text-white font-semibold rounded-xl hover:bg-[#D0312D] transition ease-in-out duration-300"
+                  className="px-4 py-2 bg-[#22C55E] text-lg text-white font-semibold rounded-xl hover:bg-[#D0312D] transition ease-in-out duration-300"
                 >
                   More
                 </Link>

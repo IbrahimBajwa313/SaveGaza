@@ -32,6 +32,7 @@ export default function Home() {
         {/* <ImageSec /> */}
         <Reviews />
         <FAQs />
+        <NewsPage />
         <ContactAndSubscribe />
         <LeadersSlider />
       </Wrapper>

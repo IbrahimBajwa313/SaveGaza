@@ -3,7 +3,7 @@ import Chart from "./Chart";
 
 export default function DeathToll() {
   return (
-    <section className="flex flex-col lg:flex-row justify-between items-center my- px-12 bg-blue-50">
+    <section className="flex flex-col lg:flex-row justify-between items-center my-8 px-4 md:px-12 bg-blue-50">
       {/* Text section */}
       <div className="flex flex-col justify-center items-start pl-4 md:pl-8 w-full lg:w-4/12 mb-8 lg:mb-0">
         <h2 className="text-4xl md:text-6xl font-extrabold">Death Toll</h2>
@@ -18,7 +18,7 @@ export default function DeathToll() {
       {/* Chart section */}
       <div className="w-full lg:w-7/12 flex flex-col justify-start items-center lg:items-end relative lg:-top-12">
         {/* Banner */}
-        <div className="bg-green-500 text-white text-center p-4 rounded-3xl mb-8 w-10/12 md:w-6/12 lg:w-6/12 relative top-12 lg:top-24 lg:-left-8">
+        <div className="bg-green-500 text-white text-center p-4 rounded-3xl mb-8 w-full md:w-10/12 lg:w-10/12 relative top-12 lg:top-24 lg:-left-8">
           <h2 className="text-3xl md:text-5xl font-extrabold">186,000+</h2>
           <p className="text-xs md:text-base font-bold">
             Every passing day leads to more innocent deaths. Help us put a stop
@@ -27,7 +27,7 @@ export default function DeathToll() {
         </div>
 
         {/* Chart container */}
-        <div className="bg-gray-50 px-4 md:px-8 pt-8 md:pt-20 rounded-3xl shadow-lg w-full lg:w-full">
+        <div className="bg-gray-50 px-4 md:px-8 pt-8 md:pt-20 rounded-3xl shadow-lg w-full">
           <Chart />
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Image from "next/image";
 
 const FAQs = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -35,53 +34,45 @@ const FAQs = () => {
   }, [activeIndex]);
 
   return (
-    <section className=" py-16 px-6">
+    <section className="py-16 px-6">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl shadow-2xl p-8">
-          <h2 className="text-5xl font-bold mb-8 text-black text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">
             Frequently Asked Questions
           </h2>
-          <div className="flex flex-row gap-8">
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* FAQ Section */}
             <div className="md:w-1/2">
-              <div className="space-y-4 h-[60vh] overflow-y-scroll scrollbar-hide">
+              <div className="space-y-4 h-auto md:h-[60vh] overflow-y-auto scrollbar-hide">
                 {faqs.map((faq, index) => (
-                  <div key={index} className="">
+                  <div key={index}>
                     <button
-                      className={`w-full text-left py-4 flex justify-between items-center ${
-                      activeIndex === index ? 'bg-[#D0312D]' : 'bg-[#22C55E]'
-                      } hover:bg-[#D0312D] focus:outline-none focus:ring-2 focus:ring-white transition duration-300 rounded-2xl px-4 shadow-md`}
+                      className={`w-full text-left py-4 flex justify-between items-center ${activeIndex === index ? 'bg-[#D0312D]' : 'bg-[#22C55E]'} hover:bg-[#D0312D] focus:outline-none focus:ring-2 focus:ring-white transition duration-300 rounded-2xl px-4 shadow-md`}
                       onClick={() => toggleFAQ(index)}
                     >
                       <span className="text-lg font-semibold text-white">{faq.question}</span>
                       <span className="text-xl text-white">{activeIndex === index ? "-" : "+"}</span>
                     </button>
                     {activeIndex === index && (
-                      <div
-                        className={`py-2 px-2 mt-2 rounded-lg transition-all duration-300 ease-in-out ${animationClass}`}
-                      >
-                        <p className="text-gray-700 text-sm ">{faq.answer}</p>
+                      <div className={`py-2 px-2 mt-2 rounded-lg transition-all duration-300 ease-in-out ${animationClass}`}>
+                        <p className="text-gray-700 text-sm">{faq.answer}</p>
                       </div>
                     )}
-                    {index < faqs.length - 1 && (
-                      <hr className="border-gray-300 mt-6" />
-                    )}
+                    {index < faqs.length - 1 && <hr className="border-gray-300 mt-6" />}
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center">
-              <div className="rounded-2xl h-[59.7vh] overflow-hidden shadow-lg">
-                <Image
-                  src="/Picture1.png"
-                  alt="Support Image"
-                  layout="responsive"
-                  width={500}
-                  height={10000}
-                  className="rounded-lg scale-105 transition-transform transform hover:scale-110 duration-300"
-                />
-              </div>
+            {/* Image Section */}
+            <div
+                className="flex justify-center rounded-2xl h-64 md:h-80 w-full md:w-1/2 mt-6 md:mt-0 overflow-hidden shadow-lg bg-cover bg-center bg-no-repeat transition-transform transform hover:scale-105 duration-300"
+                style={{
+                  backgroundImage: "url('/Picture1.png')",
+                }}
+              >
             </div>
+
           </div>
         </div>
       </div>
