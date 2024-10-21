@@ -28,7 +28,7 @@ const CustomTick = ({ x, y, payload }) => {
           dy={12}
           textAnchor="middle"
           fill="#000"
-          className="text-sm font-bold" // Decreased font size and kept bold
+          className="text-xs tracking-tight sm:text-sm sm:font-bold sm:tracking-normal" // Decreased font size and kept bold
         >
           {line}
         </text>
@@ -45,7 +45,7 @@ const CustomLabel = ({ x, y, value }) => {
       y={y - 12} // Adjust the y position to add space beneath the text
       fill="#000"
       textAnchor="middle"
-      className="text-lg font-extrabold"
+      className="text-sm tracking-tight font-bold sm:text-lg sm:tracking-normal sm:font-extrabold"
     >
       {formatNumber(value)}
     </text>

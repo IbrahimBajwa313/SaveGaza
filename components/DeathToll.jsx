@@ -3,7 +3,7 @@ import Chart from "./Chart";
 
 export default function DeathToll() {
   return (
-    <section className="flex flex-col lg:flex-row justify-between items-center my-8 px-4 md:px-12 bg-blue-50">
+    <section className="flex flex-col lg:flex-row justify-between items-center my-8 bg-blue-50">
       {/* Text section */}
       <div className="flex flex-col justify-center items-start pl-4 md:pl-8 w-full lg:w-4/12 mb-8 lg:mb-0">
         <h2 className="text-4xl md:text-6xl font-extrabold">Death Toll</h2>

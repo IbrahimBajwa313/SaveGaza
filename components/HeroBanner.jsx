@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 const HeroBanner = () => {
     return (
-        <div className='z-0 w-screen max-w-[1480px]'>
+        <div className='z-0 w-screen'>
             <Carousel autoPlay={true} infiniteLoop={true} showStatus={false} showThumbs={false}>
                 <div>
                     <img src="hajj4.jpg" />

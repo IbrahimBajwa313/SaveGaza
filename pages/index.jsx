@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import HeroBanner from "@/components/HeroBanner";
 import DeathToll from "@/components/DeathToll";
 import About from "@/components/About";
-import FAQs from "@/components/FAQs"; 
+import FAQs from "@/components/FAQs";
 import LeadersSlider from "@/components/LeadersSlider";
 import Wrapper from "@/components/Wrapper";
 import { useInView } from "react-hook-inview";
@@ -34,8 +34,8 @@ export default function Home() {
         <FAQs />
         <NewsPage />
         <ContactAndSubscribe />
-        <LeadersSlider />
       </Wrapper>
+      <LeadersSlider />
     </main>
   );
 }

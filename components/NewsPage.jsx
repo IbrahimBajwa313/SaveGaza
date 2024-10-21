@@ -87,14 +87,16 @@ export default function NewsPage() {
   const [x, setX] = useState(false);
 
   return (
-    <div className='min-h-screen mx-auto p-10 grid grid-cols-1 md:grid-cols-3 gap-4'>
+    <div className='min-h-screen mt-8 grid grid-cols-1 md:grid-cols-3 gap-4'>
 
-      <div className="news-card m-2">
+      <div className="news-card mr-2">
         <div className="buttons flex justify-center">
-          <div className={`w-full rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] hover:bg-[#3d7a53] hover:cursor-pointer text-white font-bold p-2 transition-all duration-200 ${press ? 'bg-[#3d7a53]' : 'bg-[#22C55E]'}`} onClick={() => setPress(true)}>
+          <div className={`w-full rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] hover:bg-[#3d7a53] hover:cursor-pointer
+           text-white font-bold p-2 transition-all duration-200 ${press ? 'bg-[#3d7a53]' : 'bg-[#22C55E]'}`} onClick={() => setPress(true)}>
             Press Release
           </div>
-          <div className={`w-full rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] hover:bg-blue-950 hover:cursor-pointer text-white font-bold p-2 transition-all duration-200 ${!press ? 'bg-[#D0312D]' : 'bg-[#22C55E]'}`} onClick={() => setPress(false)}>
+          <div className={`w-full rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] hover:bg-[#3d7a53] hover:cursor-pointer
+           text-white font-bold p-2 transition-all duration-200 ${!press ? 'bg-[#3d7a53]' : 'bg-[#22C55E]'}`} onClick={() => setPress(false)}>
             Video
           </div>
         </div>
@@ -122,7 +124,7 @@ export default function NewsPage() {
         </div>
       </div>
 
-      <div className="events-card m-2">
+      <div className="events-card mr-2">
         <div className="rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] text-white font-bold py-2">
           Events
         </div>
@@ -146,7 +148,7 @@ export default function NewsPage() {
         </div>
       </div>
 
-      <div className="social-media-card m-2">
+      <div className="social-media-card ">
         <div className="buttons flex justify-center">
           <div className={`w-full rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] hover:bg-[#3d7a53] hover:cursor-pointer text-white font-bold p-2 transition-all duration-200 ${fb ? 'bg-[#3d7a53]' : 'bg-[#22C55E]'}`} onClick={() => { setFB(true); setInsta(false); setX(false); }}>
             <FontAwesomeIcon icon={faFacebookF} className='text-xl' />

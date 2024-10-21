@@ -60,8 +60,8 @@ const Reviews = () => {
   };
 
   return (
-    <section className="py-16">
-      <div className="p-4 md:p-12">
+    <section className="">
+      <div className="py-4 md:py-12">
         <h1 className="text-5xl text-center font-extrabold mb-10">Review Our Efforts</h1>
 
         <div className="flex flex-col md:flex-row justify-center items-start gap-20">
@@ -131,7 +131,7 @@ const Reviews = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-green-600 text-white font-bold p-4 rounded-lg hover:bg-[#D0312D] transition duration-300 focus:outline-none mt-6"
+                  className="w-full bg-[#22C55E] text-white font-bold p-4 rounded-lg hover:bg-[#D0312D] transition duration-300 focus:outline-none mt-6"
                 >
                   Submit Review
                 </button>

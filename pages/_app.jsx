@@ -1,5 +1,6 @@
 import Footer2 from '@/components/Footer2'
 import Header from '@/components/Header'
+import Header2 from '@/components/Header2'
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import "@/styles/globals.css";

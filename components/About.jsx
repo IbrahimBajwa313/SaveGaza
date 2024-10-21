@@ -6,7 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function About() {
   return (
-    <section className='bg-gray-50 flex flex-col lg:flex-row rounded-3xl m-4 lg:m-20 p-6 lg:p-20 shadow-lg'>
+    <section className='bg-gray-50 flex flex-col lg:flex-row rounded-3xl my-4 lg:my-20 p-6 lg:p-20 shadow-lg'>
       <aside className='flex flex-col text-black justify-between w-full lg:w-3/6 pr-0 lg:pr-28 mb-6 lg:mb-0'>
         <h2 className='font-extrabold text-4xl lg:text-5xl mb-4'>About Us</h2>
         <p className='text-lg pt-4'>

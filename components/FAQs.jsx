@@ -34,15 +34,15 @@ const FAQs = () => {
   }, [activeIndex]);
 
   return (
-    <section className="py-16 px-6">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl shadow-2xl p-8">
+    <section className="py-16 w-full">
+      <div className="container w-full">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 w-full">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black text-center">
             Frequently Asked Questions
           </h2>
           <div className="flex flex-col md:flex-row gap-8">
             {/* FAQ Section */}
-            <div className="md:w-1/2">
+            <div className="md:w-1/2 w-full">
               <div className="space-y-4 h-auto md:h-[60vh] overflow-y-auto scrollbar-hide">
                 {faqs.map((faq, index) => (
                   <div key={index}>
@@ -66,13 +66,12 @@ const FAQs = () => {
 
             {/* Image Section */}
             <div
-                className="flex justify-center rounded-2xl h-64 md:h-80 w-full md:w-1/2 mt-6 md:mt-0 overflow-hidden shadow-lg bg-cover bg-center bg-no-repeat transition-transform transform hover:scale-105 duration-300"
-                style={{
-                  backgroundImage: "url('/Picture1.png')",
-                }}
-              >
+              className="flex justify-center items-center rounded-2xl h-64 md:h-80 w-full md:w-1/2 mt-6 md:my-auto overflow-hidden shadow-lg bg-cover bg-center bg-no-repeat transition-transform transform hover:scale-105 duration-300"
+              style={{
+                backgroundImage: "url('/Picture1.png')",
+              }}
+            >
             </div>
-
           </div>
         </div>
       </div>
