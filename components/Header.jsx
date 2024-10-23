@@ -100,7 +100,7 @@ setSuggestions(undefined)
                 }}
                 className='border ml-2 sm:w-4/12 w-6/12 relative border-gray-600 rounded-lg p-1 outline-none'
               />
-             {suggestions&&<div className='bg-white max-h-60 overflow-y-auto z-40 top-12 absolute rounded-lg text-black shadow-xl'>
+             {suggestions&&<div className='bg-white max-h-60 overflow-y-auto z-1000 top-12 absolute rounded-lg text-black shadow-xl'>
               
               {suggestions?.map((keys)=>{
               

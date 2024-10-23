@@ -100,7 +100,7 @@ export default function NewsPage() {
             Video
           </div>
         </div>
-        <div className="scrollbar rounded-b-lg p-3 shadow-2xl bg-white w-full overflow-y-auto" style={{ height: '70vh' }}>
+        <div className="scrollbar rounded-b-lg p-3 shadow-2xl bg-white w-full overflow-y-auto" style={{ height: '85vh' }}>
           {press && (
             <div className="press-rel-cards flex-col justify-center items-center space-y-6 my-2">
               {press_rel.map((card) => (
@@ -128,7 +128,7 @@ export default function NewsPage() {
         <div className="rounded-t-lg shadow-2xl header flex justify-center items-center bg-[#22C55E] text-white font-bold py-2">
           Events
         </div>
-        <div className="scrollbar rounded-b-lg p-3 bg-white w-full shadow-2xl overflow-y-auto" style={{ height: '70vh' }}>
+        <div className="scrollbar rounded-b-lg p-3 bg-white w-full shadow-2xl overflow-y-auto" style={{ height: '85vh' }}>
           {events.map((ev) => (
             <div key={ev.id} className="bg-white p-3 space-y-3 mb-3 border-b-2 border-gray-400">
               <img src={ev.image} className='w-full mb-2' alt="" />
@@ -160,7 +160,7 @@ export default function NewsPage() {
             <FontAwesomeIcon icon={faTwitter} className='text-xl' />
           </div>
         </div>
-        <div className="scrollbar rounded-b-lg p-3 bg-white w-full shadow-2xl overflow-y-auto" style={{ height: '70vh' }}>
+        <div className="scrollbar rounded-b-lg p-3 bg-white w-full shadow-2xl overflow-y-auto" style={{ height: '85vh' }}>
           {fb && <div className="flex flex-col justify-center items-center space-y-4 my-2">
             {/* Facebook posts go here */}
           </div>}
