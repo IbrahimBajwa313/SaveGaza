@@ -7,25 +7,25 @@ export default function NewsPage() {
   const press_rel = [
     {
       id: 1,
-      image: "/DharnaBG.jpg", // Replace with your image path
+      image: "/protest1.jpg", // Replace with your image path
       date: "20 May, 2024",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consequatur."
     },
     {
       id: 2,
-      image: "/DharnaBG.jpg", // Replace with your image path
+      image: "/protest2.png", // Replace with your image path
       date: "2 June, 2024",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consequatur."
     },
     {
       id: 3,
-      image: "/DharnaBG.jpg", // Replace with your image path
+      image: "/protest3.jpg", // Replace with your image path
       date: "10 May, 2024",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consequatur."
     },
     {
       id: 4,
-      image: "/DharnaBG.jpg", // Replace with your image path
+      image: "/protest4.jpg", // Replace with your image path
       date: "3 July, 2024",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consequatur."
     },
@@ -53,7 +53,7 @@ export default function NewsPage() {
   const events = [
     {
       id: 1,
-      image: "/protest1.jpg",
+      image: "/protest4.jpg",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, consequatur.",
       time: "Tuesday, February 20 at 8:00 AM",
       loc: "H-Block, Johar Town, Lahore"

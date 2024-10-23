@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = { 
   reactStrictMode: true,
   images: {
     domains: ['www.gravatar.com'], // Add Gravatar domain here

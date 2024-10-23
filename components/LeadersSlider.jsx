@@ -110,7 +110,7 @@ const LeadersSlider = () => {
         >
           {leaders.map((leader, index) => (
            <SwiperSlide key={index}>
-           <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-between h-[280px]"> {/* Set a fixed height for cards */}
+           <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-between h-[280px]">  
              <div className="relative w-32 h-32 mb-4">
                <Image
                  src={leader.image}
