@@ -18,7 +18,7 @@ const UnitingPak = () => {
           <div className="w-full lg:w-1/2 lg:pr-20">
             <div className="relative h-64 lg:h-[400px]">
               <Image
-                src="/Gaza.webp"
+                src="/unite.png"
                 alt="Save Gaza Campaign"
                 layout="fill"
                 objectFit="cover"

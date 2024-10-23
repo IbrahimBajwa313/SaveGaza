@@ -28,12 +28,10 @@ export default function Home() {
         <DeathToll />
         <HowYouCanHelp />
         <UnitingPak />
-
-        {/* <ImageSec /> */}
-        <Reviews />
-        <FAQs />
         <NewsPage />
+        <FAQs />
         <ContactAndSubscribe />
+        <Reviews />
       </Wrapper>
       <LeadersSlider />
     </main>
