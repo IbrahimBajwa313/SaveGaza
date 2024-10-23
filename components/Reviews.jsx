@@ -65,7 +65,7 @@ const Reviews = () => {
   return (
     <section className="">
       <div className="py-4 md:py-12">
-        <h1 className="text-5xl text-center font-extrabold mb-10">Review Our Efforts</h1>
+        <h1 className="text-5xl text-center max-h-[60vh] font-extrabold mb-10">Review Our Efforts</h1>
 
         <div className="flex flex-col md:flex-row justify-center items-start gap-20">
           {/* Reviews Section */}
