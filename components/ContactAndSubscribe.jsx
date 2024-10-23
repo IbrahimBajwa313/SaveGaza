@@ -4,9 +4,9 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 const ContactAndSubscribe = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-evenly items-center gap-8 bg-blue-50 pb-4 lg:pb-8 min-h-screen w-full">
+    <div className="flex flex-col lg:flex-row justify-evenly min-h-[80vh] items-center gap-8 bg-blue-50 pb-4 lg:pb-8 min-h-screen w-full">
       {/* Contact Section */}
-      <div className="bg-white p-8 rounded-2xl shadow-xl w-full lg:max-w-lg">
+      <div className="bg-white p-8 rounded-2xl min-h-[60vh] shadow-xl w-full lg:max-w-lg">
         <h1 className="text-3xl lg:text-4xl font-extrabold text-center mb-6">Contact us</h1>
         <ContactItem
           icon={<FaMapMarkerAlt className="text-pink-500 w-7 h-7" />}
@@ -26,7 +26,7 @@ const ContactAndSubscribe = () => {
       </div>
 
       {/* Subscribe Section */}
-      <div className="bg-white p-4 lg:p-8 rounded-2xl shadow-xl w-full lg:max-w-2xl h-auto lg:h-[60vh] flex flex-col justify-center items-center text-center mt-0">
+      <div className="bg-white p-4 lg:p-8 rounded-2xl shadow-xl w-full lg:max-w-2xl min-h-[60vh] lg:h-[60vh] flex flex-col justify-center items-center text-center mt-0">
         <Image
           src="/Picture2.png"
           alt="Support Image"
