@@ -80,7 +80,7 @@ const LeadersSlider = () => {
           centeredSlides={false}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 25000000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -109,24 +109,26 @@ const LeadersSlider = () => {
           className="mySwiper"
         >
           {leaders.map((leader, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-white p-4 rounded-lg shadow-lg relative z-10 flex flex-col items-center justify-center">
-                <div className="relative w-32 h-32 mb-4">
-                  <Image
-                    src={leader.image}
-                    alt={leader.name}
-                    className="rounded-full"
-                    fill
-                    style={{ objectFit: "cover" }}
-                    sizes="(max-width: 640px) 80vw, (min-width: 640px) 160px"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-green-600 text-center">
-                  {leader.name}
-                </h3>
-                <p className="text-gray-800 text-center text-sm">{leader.title}</p>
-              </div>
-            </SwiperSlide>
+           <SwiperSlide key={index}>
+           <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-between h-[280px]">  
+             <div className="relative w-32 h-32 mb-4">
+               <Image
+                 src={leader.image}
+                 alt={leader.name}
+                 className="rounded-full"
+                 fill
+                 style={{ objectFit: "cover" }}
+                 sizes="(max-width: 640px) 80vw, (min-width: 640px) 160px"
+               />
+             </div>
+             <h3 className="text-lg font-bold text-green-600 text-center">
+               {leader.name}
+             </h3>
+             <p className="text-gray-800 text-center text-sm">{leader.title}</p>
+           </div>
+         </SwiperSlide>
+         
+         
           ))}
         </Swiper>
       </div>

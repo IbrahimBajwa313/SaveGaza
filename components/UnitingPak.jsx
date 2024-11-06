@@ -18,7 +18,7 @@ const UnitingPak = () => {
           <div className="w-full lg:w-1/2 lg:pr-20">
             <div className="relative h-64 lg:h-[400px]">
               <Image
-                src="/Gaza.webp"
+                src="/unite.png"
                 alt="Save Gaza Campaign"
                 layout="fill"
                 objectFit="cover"
@@ -42,13 +42,13 @@ const UnitingPak = () => {
             <div ref={ref} className="flex flex-col md:flex-row gap-12 mt-8">
               <div className="text-center">
                 <p className="text-4xl font-bold text-[#22C55E]">
-                  {inView ? <CountUp end={157000} duration={3} separator="," /> : "0"}+
+                  {inView ? <CountUp end={370000} duration={3} separator="," /> : "0"}+
                 </p>
                 <p className="text-gray-600 font-semibold">Destroyed structures</p>
               </div>
               <div className="text-center">
                 <p className="text-4xl font-bold text-[#22C55E]">
-                  {inView ? <CountUp end={33000} duration={3} separator="," /> : "0"}+
+                  {inView ? <CountUp end={186500} duration={3} separator="," /> : "0"}+
                 </p>
                 <p className="text-gray-600 font-semibold">Lives lost</p>
               </div>

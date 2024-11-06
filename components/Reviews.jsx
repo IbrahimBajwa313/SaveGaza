@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 
-// Array of random background colors
-const colors = [
-  "#FF5733", "#33FF57", "#3357FF", "#F39C12", "#8E44AD", "#1ABC9C",
-  "#E74C3C", "#2ECC71", "#3498DB", "#9B59B6", "#E67E22", "#34495E"
+// Array of predefined dp images
+const dpImages = [
+  "/dps/dp1.jpg", // Replace these with your actual image paths
+  "/dps/dp2.png",
+  "/dps/dp3.png",
+  "/dps/dp4.png",
+  "/dps/dp5.png"
 ];
 
-const getRandomColor = () => {
-  return colors[Math.floor(Math.random() * colors.length)];
+const getRandomDp = () => {
+  return dpImages[Math.floor(Math.random() * dpImages.length)];
 };
 
 const Reviews = () => {
@@ -22,13 +25,13 @@ const Reviews = () => {
       const res = await fetch("/api/reviews");
       const data = await res.json();
 
-      // Assign a random color to each review on initial load
-      const reviewsWithColors = data.map((review) => ({
+      // Assign a random dp image to each review on initial load
+      const reviewsWithDps = data.map((review) => ({
         ...review,
-        color: getRandomColor(),
+        dp: getRandomDp(), // Assign a random image as dp
       }));
 
-      setReviews(reviewsWithColors);
+      setReviews(reviewsWithDps);
     };
     fetchReviews();
   }, []);
@@ -47,7 +50,7 @@ const Reviews = () => {
 
     if (response.ok) {
       const newReview = await response.json(); // Get the new review from the response
-      newReview.color = getRandomColor(); // Assign a random color to the new review
+      newReview.dp = getRandomDp(); // Assign a random dp image to the new review
 
       alert("Review submitted successfully");
       setReviews((prevReviews) => [newReview, ...prevReviews].slice(0, 3)); // Add the new review and keep only the latest 3
@@ -62,7 +65,7 @@ const Reviews = () => {
   return (
     <section className="">
       <div className="py-4 md:py-12">
-        <h1 className="text-5xl text-center font-extrabold mb-10">Review Our Efforts</h1>
+        <h1 className="text-5xl text-center max-h-[60vh] font-extrabold mb-10">Review Our Efforts</h1>
 
         <div className="flex flex-col md:flex-row justify-center items-start gap-20">
           {/* Reviews Section */}
@@ -73,13 +76,12 @@ const Reviews = () => {
                 className="bg-gray-50 p-5 mx-2 rounded-2xl shadow-lg transition-transform transform hover:scale-105 mb-6"
               >
                 <div className="flex items-center mb-3">
-                  {/* Avatar with First Letter of Name and Random Color */}
-                  <div
-                    className="w-10 h-10 rounded-full flex justify-center items-center text-lg font-bold"
-                    style={{ backgroundColor: review.color }} // Use the assigned color
-                  >
-                    {review.name ? review.name[0].toUpperCase() : ""}
-                  </div>
+                  {/* Avatar with Random Image */}
+                  <img
+                    src={review.dp} // Display the random image
+                    alt="Profile Picture"
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
                   <div className="ml-4">
                     <h3 className="text-md font-semibold text-gray-900">{review.name}</h3>
                     <p className="text-gray-600 text-sm">{review.email}</p>
@@ -121,7 +123,7 @@ const Reviews = () => {
                 <textarea
                   id="testimonial"
                   className="w-full p-4 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none"
-                  rows="6" // Adjusted height for content without overflow
+                  rows="6"
                   placeholder="Share your experience..."
                   value={testimonial}
                   onChange={(e) => setTestimonial(e.target.value)}

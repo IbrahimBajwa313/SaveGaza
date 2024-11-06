@@ -44,7 +44,7 @@ export default function About() {
           </div>
           <div>
             <img
-              src="/protest2.jpg"
+              src="/protest2.png"
               alt="Slide 2"
               className="rounded-lg object-cover h-64 lg:h-96 w-full"
             />
