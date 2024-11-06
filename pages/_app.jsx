@@ -1,6 +1,7 @@
 import Footer2 from '@/components/Footer2'
 import Header from '@/components/Header'
 import Header2 from '@/components/Header2'
+import Header3 from '@/components/Header3'
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import "@/styles/globals.css";
@@ -53,7 +54,8 @@ export default function App({ Component, pageProps }) {
 
       <Head />
       <Headroom>
-        <Header />
+        {/* <Header /> */}
+        <Header3 />
     </Headroom>
 
      
