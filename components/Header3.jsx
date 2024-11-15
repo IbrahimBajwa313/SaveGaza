@@ -40,22 +40,7 @@ export default function Header() {
             <div className="flex justify-between items-center">
                 <div className="flex items-center space-x-4">
                     <div className="text-2xl font-bold flex items-center">
-                        <span
-                            className={`mr-2 cursor-pointer hidden md:flex ${isIconClicked ? 'text-green-500' : 'text-white'} hover:text-green-500 transition-colors duration-300`}
-                            onClick={toggleDropdown}
-                        >
-                            <svg
-                                width="32"
-                                height="32"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <rect x="3" y="5" width="18" height="2" fill="currentColor" />
-                                <rect x="3" y="11" width="14" height="2" fill="currentColor" />
-                                <rect x="3" y="17" width="10" height="2" fill="currentColor" />
-                            </svg>
-                        </span>
+                    <img src="./save-gaza-logo.png" alt="Studio Logo" className="h-12 w-12" />                         
                         <span className='ml-4'>Save Gaza Campaign</span>
                     </div>
                 </div>
