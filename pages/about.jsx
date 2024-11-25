@@ -12,7 +12,7 @@ export default function AboutUs() {
         <Wrapper>
       {/* Main Content */}
       <main className="container mx-auto px-4 py-10 space-y-12">
-        {/* <About /> */}
+        <About />
 
         {/* Section: Mission and Vision */}
         <section className="bg-white p-6 md:p-10 rounded-3xl shadow-md">

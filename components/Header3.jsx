@@ -27,7 +27,7 @@ export default function Header() {
   };
 
   const items1 = ["Option 1", "Option 2", "Option 3"];
-  const items2 = ["Latest", "Modern", "Contemporary"];
+  const items2 = ["About", "SGC News", "Donations"];
   const list1 = items1.map((item, index, url) => {
     return <ListItem key={index} itemName={item} url={url} />;
   });
@@ -41,6 +41,7 @@ export default function Header() {
     >
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-4">
+            <Link href={"/"}>
           <div className="text-2xl font-bold flex items-center">
             <img
               src="./save-gaza-logo.png"
@@ -49,29 +50,33 @@ export default function Header() {
             />
             <span className="ml-4">Save Gaza Campaign</span>
           </div>
+            </Link>
         </div>
 
         <nav className="flex items-center space-x-8">
           {/* Navigation Links */}
           <span className="hidden md:flex items-center space-x-8">
-            <Link href="#">
+            <Link href="/about">
               <span className="hover:text-green-500 cursor-pointer transition-colors duration-300">
-                Latest
+                About
               </span>
             </Link>
             <Link href="#">
               <span className="hover:text-green-500 cursor-pointer transition-colors duration-300">
-                Modern
+                SGC-News
               </span>
             </Link>
             <Link href="#">
               <span className="hover:text-green-500 cursor-pointer transition-colors duration-300">
-                Contemporary
+                Donations
               </span>
             </Link>
-            <Link href="#">
+            <Link
+            href="https://linktr.ee/savegazacampaign?utm_source=linktree_profile_share&ltsid=cde54ead-18bd-4278-934c-bc9a06c23d71"
+            target="_blank" >
+             
               <span className="hover:text-green-500 cursor-pointer transition-colors duration-300">
-                Affordable
+                Join-Us
               </span>
             </Link>
           </span>
