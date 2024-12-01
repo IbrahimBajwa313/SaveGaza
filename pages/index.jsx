@@ -22,6 +22,7 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden w-screen z-20">
+      
       <HeroBanner />
       <Wrapper className="bg-blue-50 pt-20">
         <About />

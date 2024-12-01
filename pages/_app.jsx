@@ -55,7 +55,7 @@ export default function App({ Component, pageProps }) {
       <Head />
       <Headroom>
         {/* <Header /> */}
-        <Header3 />
+        <Header />
     </Headroom>
 
      

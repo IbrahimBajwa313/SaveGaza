@@ -20,13 +20,12 @@ export default function About() {
         </p>
         <br /> 
         <a
-          href="https://linktr.ee/savegazacampaign?utm_source=linktree_profile_share&ltsid=cde54ead-18bd-4278-934c-bc9a06c23d71"
-          target="_blank"
+          href="/about" 
           rel="noopener noreferrer"
           className="w-full lg:w-full block"
         >
           <button className="w-full p-3   bg-[#22C55E] text-white rounded-full font-bold text-lg lg:text-2xl transition duration-300 ease-in-out hover:bg-[#D0312D] hover:text-white">
-            Join Now{" "}
+            Know More About Us{" "}
             <FontAwesomeIcon className="pl-4" icon={faArrowUpRightFromSquare} />
           </button>
         </a>
