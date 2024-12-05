@@ -62,9 +62,12 @@ const Header = () => {
             />
           )}
 
-          <button className="hidden md:flex bg-green-500 hover:bg-green-600 text-white px-8 py-2 rounded-md transition-colors duration-300">
+          <Link
+            href="/login"
+            className="hidden md:flex bg-green-500 hover:bg-green-600 text-white px-8 py-2 rounded-md transition-colors duration-300"
+          >
             Login
-          </button>
+          </Link>
         </div>
       </div>
     </div>

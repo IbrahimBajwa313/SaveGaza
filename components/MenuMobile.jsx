@@ -14,6 +14,7 @@ const data = [
     { id: 2, name: 'SGC Shop', url: '/contact' },
     { id: 3, name: 'SGC News', url: '/contact' },
     { id: 4, name: 'Gaza Donations', url: '/contact' },
+    { id: 5, name: 'Login', url: '/login' },
 ];
  
 

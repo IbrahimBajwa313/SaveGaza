@@ -7,20 +7,7 @@ const data = [
     { id: 2, name: 'SGC Shop', url: '/contact' },
     { id: 3, name: 'SGC News', url: '/contact' },
     { id: 4, name: 'Gaza Donations', url: '/contact' },
-];
-
-const subMenuData = [
-    { id: 1, name: 'Jordan', doc_count: 11 },
-    { id: 2, name: 'Sneakers', doc_count: 8 },
-    { id: 3, name: 'Running shoes', doc_count: 14 },
-    { id: 4, name: 'Football shoes', doc_count: 17 },
-];
-
-const subSortData = [
-    { id: 1, name: 'Price low to high' },
-    { id: 2, name: 'Price high to low' },
-    { id: 3, name: 'Newest Arrivals' },
-    { id: 4, name: 'Featured' },
+    { id: 5, name: 'Join Us', url: '/joinus' },
 ];
 
 const Menu = ({ showCatMenu, setShowCatMenu, showSortMenu, setShowSortMenu }) => {
