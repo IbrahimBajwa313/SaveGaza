@@ -16,7 +16,7 @@ const HeroBanner = () => {
         >
           <div>
             <Image
-              src="/heroSlides/1.jpg"
+              src="/heroSlides/1.png"
               alt="Hero Slide 1"
               className="rounded-md"
               width={800} // Specify the width
