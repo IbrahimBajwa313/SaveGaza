@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import ListItem from "./listItem";
+import ListItem from "./ListItem";
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
