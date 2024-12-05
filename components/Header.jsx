@@ -64,7 +64,13 @@ const Header = () => {
 
           <Link
             href="/login"
-            className="hidden md:flex bg-green-500 hover:bg-green-600 text-white px-8 py-2 rounded-md transition-colors duration-300"
+            className="hidden md:flex bg-red-600 hover:bg-red-800 text-white px-6 py-2 rounded-md transition-colors duration-300"
+          >
+            Join Us
+          </Link>
+          <Link
+            href="/login"
+            className="hidden md:flex bg-green-500 hover:bg-green-600 mr-2 text-white px-8 py-2 rounded-md transition-colors duration-300"
           >
             Login
           </Link>

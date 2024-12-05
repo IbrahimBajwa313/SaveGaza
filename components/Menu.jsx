@@ -6,8 +6,7 @@ const data = [
     { id: 1, name: 'About', url: '/about' },
     { id: 2, name: 'SGC Shop', url: '/contact' },
     { id: 3, name: 'SGC News', url: '/contact' },
-    { id: 4, name: 'Gaza Donations', url: '/contact' },
-    { id: 5, name: 'Join Us', url: '/joinus' },
+    { id: 4, name: 'Gaza Donations', url: '/contact' }, 
 ];
 
 const Menu = ({ showCatMenu, setShowCatMenu, showSortMenu, setShowSortMenu }) => {
