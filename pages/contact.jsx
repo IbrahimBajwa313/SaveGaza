@@ -11,12 +11,12 @@ const Contact = () => {
       className="relative bg-gray-100 text-black"
     >
       <div className="container px-5 py-16 mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
+      <div className="text-center mb-12">
+          <h1 className="text-3xl  sm:text-4xl font-extrabold text-gray-800 mb-4">
             Get in Touch With Us
           </h1>
           <p className="text-gray-600 text-lg">
-            We'd love to hear from you! Fill out the form below,<br></br> and we'll get
+            We'd love to hear from you!<br></br> And we'll get
             back to you shortly.
           </p>
         </div>
