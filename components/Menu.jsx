@@ -4,9 +4,10 @@ import { BsChevronDown } from 'react-icons/bs';
 
 const data = [
     { id: 1, name: 'About', url: '/about' },
-    { id: 2, name: 'SGC Shop', url: '/contact' },
-    { id: 3, name: 'SGC News', url: '/contact' },
-    { id: 4, name: 'Gaza Donations', url: '/contact' }, 
+    { id: 2, name: 'SGC Shop', url: '/' },
+    { id: 3, name: 'SGC News', url: '/' },
+    { id: 4, name: 'Gaza Donations', url: '/' }, 
+    { id: 5, name: 'Contact Us', url: '/contact' }, 
 ];
 
 const Menu = ({ showCatMenu, setShowCatMenu, showSortMenu, setShowSortMenu }) => {
