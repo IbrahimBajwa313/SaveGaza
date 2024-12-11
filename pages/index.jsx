@@ -7,10 +7,10 @@ import LeadersSlider from "@/components/LeadersSlider";
 import Wrapper from "@/components/Wrapper";
 import { useInView } from "react-hook-inview";
 import { motion } from "framer-motion";
-import HowYouCanHelp from "@/components/HowYouCanHelp";
+import HowYouHelp from "@/components/HowYouHelp";
 import Reviews from "@/components/Reviews";
 import ImageSec from "./ImageSec";
-import './fontawesome';
+import "./fontawesome";
 import UnitingPak from "@/components/UnitingPak";
 import ContactAndSubscribe from "@/components/ContactAndSubscribe";
 import NewsPage from "@/components/NewsPage";
@@ -26,9 +26,9 @@ export default function Home() {
       <Wrapper className="bg-blue-50 pt-20">
         <About />
         <DeathToll />
-        <HowYouCanHelp />
+        <HowYouHelp />
         <UnitingPak />
-        <NewsPage />
+        {/* <NewsPage /> */}
         <FAQs />
         <ContactAndSubscribe />
         <Reviews />
