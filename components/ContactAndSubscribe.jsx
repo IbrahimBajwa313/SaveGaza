@@ -1,8 +1,48 @@
 import Image from 'next/image';
 import React from 'react';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { useState } from "react";
 
 const ContactAndSubscribe = () => {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  // Handle the form submission
+  const handleSubmit = async (event) => {
+    // Prevent the default form submission behavior (page refresh)
+    setSuccessMessage("")
+    setError("")
+    event.preventDefault();
+    setIsSubmitting(true);
+    setError(""); // Clear previous error messages
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json(); // Read the response body only once
+
+      if (res.ok) {
+        setSuccessMessage("Thank you for subscribing!");
+      } else {
+        setError(data.error || "Something went wrong!");
+      }
+    } catch (err) {
+      console.error("Error during subscription:", err); // Log the actual error message
+      setError("Failed to subscribe. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+
   return (
     <div className="flex flex-col lg:flex-row justify-evenly min-h-[80vh] items-center gap-8 bg-blue-50 pb-4 lg:pb-8 min-h-screen w-full">
       {/* Contact Section */}
@@ -35,20 +75,26 @@ const ContactAndSubscribe = () => {
           height={400}
           className="rounded-lg"
         />
-        <form className="flex mt-6 lg:mt-10 flex-col lg:flex-row items-center w-full space-y-4 lg:space-y-0 lg:space-x-4">
+        <form className="flex mt-6 lg:mt-10 flex-col lg:flex-row items-center w-full space-y-4 lg:space-y-0 lg:space-x-4" onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="Enter your email"
             className="border border-gray-300 p-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <button className="w-full lg:w-auto bg-[#22C55E] px-6 py-4 text-white font-bold rounded-lg hover:bg-[#D0312D] transition-colors duration-600">
-            Subscribe
+          <button className="w-full lg:w-auto bg-[#22C55E] px-6 py-4 text-white font-bold rounded-lg hover:bg-[#D0312D] transition-colors duration-600"  type="submit"
+          disabled={isSubmitting}>
+            {isSubmitting ? "Subscribing..." : "Subscribe"}
           </button>
+          {error && <p className="text-red-500 mt-2">{error}</p>}
+      {successMessage && <p className="text-green-500 mt-2">{successMessage}</p>}
         </form>
         <p className="text-sm text-gray-500 mt-4">
           By clicking on the button, you agree to the <a href="#" className="underline hover:text-blue-600">privacy policy</a>
         </p>
       </div>
+      
     </div>
   );
 };
