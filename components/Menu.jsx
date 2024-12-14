@@ -4,9 +4,9 @@ import { BsChevronDown } from 'react-icons/bs';
 
 const data = [
     { id: 1, name: 'About', url: '/about' },
-    { id: 2, name: 'SGC Shop', url: '/' },
-    { id: 3, name: 'SGC News', url: '/' },
-    { id: 4, name: 'Gaza Donations', url: '/' }, 
+    { id: 2, name: 'SGC Shop', url: '/pageUnderCons' },
+    { id: 3, name: 'SGC News', url: '/pageUnderCons' },
+    { id: 4, name: 'Gaza Donations', url: '/pageUnderCons' }, 
     { id: 5, name: 'Contact Us', url: '/contact' }, 
 ];
 

@@ -8,7 +8,7 @@ const Login = () => {
             initial={{ opacity: 0, scale: 1, y: -10 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             transition={{ delay: 0, duration: 0.3, stiffness: 50 }}
-            className="flex flex-col bg-gray-900 justify-center items-center min-h-screen px-4"
+            className="flex flex-col bg-black justify-center items-center min-h-screen px-4"
         >
             <div className="w-full max-w-md bg-gray-800 shadow-lg rounded-xl p-8 border border-gray-700">
                 <h1 className="text-2xl font-semibold text-gray-200 text-center mb-6">
