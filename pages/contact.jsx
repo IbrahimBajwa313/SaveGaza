@@ -1,131 +1,119 @@
-import Link from "next/link";
-import React from "react";
-import { motion } from "framer-motion";
+import Link from 'next/link';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FaYoutube, FaInstagram, FaLinkedin, FaTiktok , FaTwitter } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="relative bg-gray-100 text-black"
+    <motion.div
+      initial={{ opacity: 0, scale: 1, y: -10 }}
+      animate={{ y: 0, opacity: 1, scale: 1 }}
+      transition={{ delay: 0, duration: 0.3, stiffness: 50 }}
+      className="flex flex-col justify-center items-center min-h-screen bg-white px-4"
     >
-      <div className="container px-5 py-16 mx-auto">
-      <div className="text-center mb-12">
-          <h1 className="text-3xl  sm:text-4xl font-extrabold text-gray-800 mb-4">
-            Get in Touch With Us
-          </h1>
-          <p className="text-gray-600 text-lg">
-            We'd love to hear from you!<br></br> And we'll get
-            back to you shortly.
-          </p>
+      {/* Form Container */}
+      <div className="w-full max-w-md p-6 rounded-xl m-4 flex flex-col items-center shadow-lg border border-gray-400 opacity-90">
+        <div className="text-xl cursor-pointer flex flex-col justify-center items-center">
+          <h1 className="font-semibold text-3xl text-black m-2">Contact Us</h1>
         </div>
-        <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          <form>
-            <div className="flex flex-wrap -m-2">
-              {/* Name Field */}
-              <div className="p-2 w-full sm:w-1/2">
-                <div className="relative">
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full mt-1 p-3 border rounded-md text-gray-700 focus:ring-indigo-500 focus:border-indigo-500"
-                  />
-                </div>
-              </div>
-              {/* Email Field */}
-              <div className="p-2 w-full sm:w-1/2">
-                <div className="relative">
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full mt-1 p-3 border rounded-md text-gray-700 focus:ring-indigo-500 focus:border-indigo-500"
-                  />
-                </div>
-              </div>
-              {/* Message Field */}
-              <div className="p-2 w-full">
-                <div className="relative">
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    className="w-full mt-1 p-3 border rounded-md text-gray-700 focus:ring-indigo-500 focus:border-indigo-500 h-26 resize-none"
-                  ></textarea>
-                </div>
-              </div>
-              {/* Submit Button */}
-              <div className="p-2 w-full text-center">
-                <Link href="/">
-                  <button className="w-full sm:w-48 bg-black text-white font-semibold py-3 rounded-full shadow-md hover:opacity-90 transition-transform transform active:scale-95">
-                    Send Message
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </form>
-          <div className="mt-8 border-t pt-8 text-center text-gray-600">
-            <a href="mailto:tameer2k23@gmail.com" className="text-indigo-600 hover:underline">
-              tameer2k23@gmail.com
-            </a>
-            <p className="mt-4">
-              SGC Office S#23, 3rd Floor, Malikabad Centre near 6th Rd, Murree
-              Rd, Rawalpindi
-            </p>
-            <div className="flex justify-center mt-4 space-x-4">
-              <a href="#" className="text-gray-500 hover:text-indigo-500">
-                <svg
-                  fill="currentColor"
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                </svg>
-              </a>
-              <a href="#" className="text-gray-500 hover:text-indigo-500">
-                <svg
-                  fill="currentColor"
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                </svg>
-              </a>
-              <a href="#" className="text-gray-500 hover:text-indigo-500">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                  viewBox="0 0 24 24"
-                >
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                </svg>
-              </a>
-            </div>
+        {/* Form Fields */}
+        <div className="flex flex-col justify-center items-center mt-6 space-y-4 w-full">
+          {/* Name Field */}
+          <div className="w-full">
+            <label className="m-1 text-lg text-black font-semibold">Name</label>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              className="w-full border-b border-black focus:outline-none text-black placeholder:opacity-50 font-semibold bg-transparent"
+            />
+          </div>
+          {/* Email Field */}
+          <div className="w-full">
+            <label className="m-1 text-lg text-black font-semibold">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-full border-b border-black focus:outline-none text-black placeholder:opacity-50 font-semibold bg-transparent"
+            />
+          </div>
+          {/* Message Field */}
+          <div className="w-full">
+            <label className="m-1 text-lg text-black font-semibold">Message</label>
+            <textarea
+              placeholder="Write your message"
+              className="w-full border-b border-black focus:outline-none text-black placeholder:opacity-50 font-semibold bg-transparent resize-none"
+            />
           </div>
         </div>
+        {/* Submit Button */}
+        <div className="text-center mt-6">
+          <button className="uppercase w-full py-2 px-6 rounded-full text-white bg-black font-medium">
+            Send Message
+          </button>
+        </div>
       </div>
-    </motion.section>
+      {/* Social Media Links */}
+      <div className="text-center mt-6">
+        <p className="text-lg font-semibold text-gray-600 mb-4">Follow Us On</p>
+        <div className="flex justify-center space-x-6">
+          <a
+            href="https://www.youtube.com/@savegazacampaign"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-600 text-2xl hover:opacity-80"
+          >
+            <FaYoutube />
+          </a>
+          <a
+            href="https://www.instagram.com/savegazacampaign"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink-600 text-2xl hover:opacity-80"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/save-gaza-campaign?originalSubdomain=pk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 text-2xl hover:opacity-80"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://twitter.com/savegazapk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 text-2xl hover:opacity-80"
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href="https://www.tiktok.com/@savegaza.campaign"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-black text-2xl hover:opacity-80"
+          >
+            <FaTiktok />
+          </a>
+        </div>
+      </div>
+      {/* Footer Links */}
+      <div className="text-center my-6 flex flex-col">
+        <p className="text-sm font-medium text-gray-400 m-1">
+          Need immediate help?{' '}
+          <Link href="/faq" className="hover:text-violet-500">
+            Check our FAQ
+          </Link>
+        </p>
+        <p className="text-sm font-bold text-gray-400 m-1">
+          Back to{' '}
+          <Link href="/" className="hover:text-violet-500">
+            Home
+          </Link>
+        </p>
+      </div>
+    </motion.div>
   );
 };
 
