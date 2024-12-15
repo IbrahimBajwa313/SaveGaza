@@ -1,17 +1,28 @@
-import Image from 'next/image';
-import React from 'react';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import Image from "next/image";
+import React from "react";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 const ContactAndSubscribe = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-evenly min-h-[80vh] items-center gap-8 bg-blue-50 pb-4 lg:pb-8 min-h-screen w-full">
+    <div className="flex flex-col lg:flex-row justify-evenly min-h-[80vh] items-center gap-8 pb-4 lg:pb-8 min-h-screen w-full">
       {/* Contact Section */}
-      <div className="bg-white p-8 rounded-2xl min-h-[60vh] shadow-xl w-full lg:max-w-lg">
-        <h1 className="text-3xl lg:text-4xl font-extrabold text-center mb-6">Contact us</h1>
+      <div className="bg-white p-8 lg:p-6 rounded-2xl min-h-[60vh] shadow-xl w-full lg:max-w-lg">
+        <h1 className="text-3xl lg:text-4xl font-extrabold text-center mb-6">
+          Contact us
+        </h1>
         <ContactItem
           icon={<FaMapMarkerAlt className="text-pink-500 w-7 h-7" />}
           label="Address"
-          content={<a href="" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">6 Herzen St, Kyiv</a>}
+          content={
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline"
+            >
+              6 Herzen St, Kyiv
+            </a>
+          }
         />
         <ContactItem
           icon={<FaPhoneAlt className="text-yellow-500 w-7 h-7" />}
@@ -21,7 +32,14 @@ const ContactAndSubscribe = () => {
         <ContactItem
           icon={<FaEnvelope className="text-blue-500 w-7 h-7" />}
           label="Email"
-          content={<a href="mailto:tameer2k23@gmail.com" className="text-blue-500 hover:underline">tameer2k23@gmail.com</a>}
+          content={
+            <a
+              href="mailto:tameer2k23@gmail.com"
+              className="text-blue-500 hover:underline"
+            >
+              tameer2k23@gmail.com
+            </a>
+          }
         />
       </div>
 
@@ -46,7 +64,10 @@ const ContactAndSubscribe = () => {
           </button>
         </form>
         <p className="text-sm text-gray-500 mt-4">
-          By clicking on the button, you agree to the <a href="#" className="underline hover:text-blue-600">privacy policy</a>
+          By clicking on the button, you agree to the{" "}
+          <a href="#" className="underline hover:text-blue-600">
+            privacy policy
+          </a>
         </p>
       </div>
     </div>
@@ -54,7 +75,7 @@ const ContactAndSubscribe = () => {
 };
 
 const ContactItem = ({ icon, label, content }) => (
-  <div className="flex items-center space-x-4 mb-6 w-full">
+  <div className="flex items-center space-x-4 mb-4 lg:mb-6 w-full">
     {icon}
     <div>
       <p className="text-xl lg:text-2xl font-bold">{label}</p>

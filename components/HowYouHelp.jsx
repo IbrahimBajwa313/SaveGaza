@@ -13,24 +13,40 @@ const HowYouCanHelp = () => {
       icon: <FaHandsHelping className="text-green-500 text-6xl" />,
       title: "Join as a Ground Activist",
       description: "Become part of our movement to make a difference.",
+      button: {
+        label: "Join Now",
+        link: "/ground-activist-form", // Replace with the form link
+      },
     },
     {
       id: 2,
       icon: <FaUniversity className="text-blue-500 text-6xl" />,
       title: "University Ambassador",
       description: "Represent us at your university and inspire others.",
+      button: {
+        label: "Join Now",
+        link: "university-ambassador-form", // Replace with the form link
+      },
     },
     {
       id: 3,
       icon: <FaBullhorn className="text-yellow-500 text-6xl" />,
       title: "Social Media Activist",
       description: "Spread awareness and support through social platforms.",
+      button: {
+        label: "Join Now",
+        link: "social-media-activist-form", // Replace with the form link
+      },
     },
     {
       id: 4,
       icon: <FaDonate className="text-red-500 text-6xl" />,
       title: "Donate",
       description: "Your contribution can bring meaningful change.",
+      button: {
+        label: "Donate Now",
+        link: "", // Replace with your donation module link
+      },
     },
   ];
 
@@ -48,11 +64,19 @@ const HowYouCanHelp = () => {
           {waysToHelp.map((way) => (
             <div
               key={way.id}
-              className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center hover:shadow-xl transition-transform transform hover:scale-105"
+              className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center text-center h-full"
             >
               {way.icon}
               <h3 className="text-xl font-extrabold mt-4">{way.title}</h3>
-              <p className="mt-2">{way.description}</p>
+              <p className="mt-2 flex-grow">{way.description}</p>
+              {way.button && (
+                <a
+                  href={way.button.link}
+                  className="mt-4 inline-block px-6 py-2 text-x font-bold text-[#22C55E] border-2 border-[#22C55E] rounded-lg hover:bg-[#22C55E] hover:text-white transition"
+                >
+                  {way.button.label}
+                </a>
+              )}
             </div>
           ))}
         </div>

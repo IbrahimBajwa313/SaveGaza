@@ -1,7 +1,7 @@
-import Footer2 from '@/components/Footer2'
-import Header from '@/components/Header'
-import Header2 from '@/components/Header2'
-import Header3 from '@/components/Header3'
+import Footer2 from "@/components/Footer2";
+import Header from "@/components/Header";
+import Header2 from "@/components/Header2";
+import Header3 from "@/components/Header3";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import "@/styles/globals.css";
@@ -48,6 +48,7 @@ export default function App({ Component, pageProps }) {
         className="fixed bottom-4 right-1 rounded-full bg-white/[0.25] text-green-500 duration-200 hover:scale-110 cursor-pointer"
         target="_blank"
         rel="noopener noreferrer"
+        style={{ zIndex: 9999 }}
       >
         <FaWhatsapp size={50} />
       </Link>
@@ -56,15 +57,14 @@ export default function App({ Component, pageProps }) {
       <Headroom>
         {/* <Header /> */}
         <Header />
-    </Headroom>
+      </Headroom>
 
-     
-        <Component />
-  
-    <Footer2 />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
+      <Component />
+
+      <Footer2 />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
         crossOrigin="true"

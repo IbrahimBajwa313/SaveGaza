@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import About from "../components/About";
 import ContactAndSubscribe from "@/components/ContactAndSubscribe";
 import Wrapper from "@/components/Wrapper";
 
@@ -11,29 +10,27 @@ export default function AboutUs() {
     <div className="min-h-screen bg-blue-50">
       <Wrapper>
         {/* Main Content */}
-        <main className="container mx-auto px-4 py-10 space-y-12">
+        <main className="container mx-auto px-4 py-8 space-y-10">
           {/* <About /> */}
-
-          {/* Section: Mission and Vision */}
-          <section className="bg-white p-6 md:p-10 rounded-3xl shadow-md">
-            <h2 className="font-extrabold text-center text-3xl sm:text-4xl lg:text-5xl mb-8">
+          <section className="bg-white p-4 md:p-6 rounded-3xl shadow-md">
+            <h2 className="font-extrabold text-center text-xl sm:text-2xl lg:text-3xl mb-4">
               Our Mission and Vision
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="flex justify-center md:col-span-1">
                 <Image
                   src="/protest1.jpg"
                   alt="About Us Image"
-                  width={500}
-                  height={400}
+                  width={450}
+                  height={350}
                   className="rounded-2xl object-cover max-w-full"
                 />
               </div>
               <div className="md:col-span-1">
-                <h2 className="font-extrabold text-xl sm:text-2xl lg:text-3xl mb-4 text-[#22C55E]">
+                <h3 className="font-extrabold text-lg sm:text-xl mb-3 text-[#22C55E]">
                   Our Mission
-                </h2>
-                <p className="text-lg sm:text-xl mb-4">
+                </h3>
+                <p className="text-sm sm:text-base mb-3">
                   Our mission is to stand in solidarity with the people of Gaza
                   by raising global awareness about the humanitarian crisis they
                   face. Through protests, educational initiatives, and
@@ -41,10 +38,10 @@ export default function AboutUs() {
                   on the injustices in Palestine and inspire meaningful actions
                   that promote peace, justice, and relief.
                 </p>
-                <h2 className="font-extrabold text-xl sm:text-2xl lg:text-3xl mb-4 text-[#22C55E]">
+                <h3 className="font-extrabold text-lg sm:text-xl mb-3 text-[#22C55E]">
                   Our Vision
-                </h2>
-                <p className="text-lg sm:text-xl mb-4">
+                </h3>
+                <p className="text-sm sm:text-base mb-3">
                   We envision a world where global solidarity and collective
                   efforts lead to the restoration of justice and dignity for the
                   people of Gaza. By mobilizing communities, fostering
@@ -57,25 +54,26 @@ export default function AboutUs() {
           </section>
 
           {/* Section: Leader */}
-          <section className="bg-white p-6 md:p-10 rounded-3xl shadow-md">
-            <h2 className="font-extrabold text-center text-3xl sm:text-4xl lg:text-5xl mb-6">
+          {/* Section: Leader */}
+          <section className="bg-white p-4 md:p-6 rounded-3xl shadow-md">
+            <h2 className="font-extrabold text-center text-xl sm:text-2xl lg:text-3xl mb-4">
               Founder Save Gaza Campaign
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="flex justify-center md:col-span-1 w-full">
                 <Image
                   src="/LeadersImages/Humaira-Tayyaba.webp"
                   alt="Humaira Tayyaba"
-                  width={400}
-                  height={300}
+                  width={350}
+                  height={250}
                   className="rounded-xl object-cover max-w-full"
                 />
               </div>
               <div className="md:col-span-1 flex flex-col items-start justify-center w-full">
-                <h2 className="font-extrabold text-xl sm:text-2xl lg:text-3xl mb-4 text-[#22C55E]">
+                <h3 className="font-extrabold text-lg sm:text-xl mb-3 text-[#22C55E]">
                   Humaira Tayyaba
-                </h2>
-                <p className="text-lg sm:text-xl mb-4">
+                </h3>
+                <p className="text-sm sm:text-base mb-3">
                   Humaira Tayyaba is a seasoned community leader and activist
                   with over 20 years of experience in women's rights, education,
                   and humanitarian causes. She served as the Central President
@@ -105,155 +103,9 @@ export default function AboutUs() {
               </div>
             </div>
           </section>
-
-          {/* Section: Team */}
-          <section className="p-6 md:p-10">
-            <h2 className="font-extrabold text-center text-3xl sm:text-4xl lg:text-5xl mb-6">
-              Leaders Driving The Campaign
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-              {/* Team Member 1 */}
-              <div className="bg-white shadow-md rounded-lg p-4 text-center">
-                <Image
-                  src="/LeadersImages/Mushtaq-khan.webp"
-                  alt="Mushtaq Khan"
-                  width={96}
-                  height={96}
-                  className="rounded-full mx-auto mb-4 h-24 w-24 object-cover"
-                />
-                <h3 className="font-semibold text-[#22C55E]">Mushtaq Khan</h3>
-                <p className="text-gray-700">Ex Member of Senate</p>
-              </div>
-
-              {/* Team Member 2 */}
-              <div className="bg-white shadow-md rounded-lg p-4 text-center">
-                <Image
-                  src="/LeadersImages/Wahaj-Ahmad.webp"
-                  alt="Wahaj Ahmad"
-                  width={96}
-                  height={96}
-                  className="rounded-full mx-auto mb-4 h-24 w-24 object-cover"
-                />
-                <h3 className="font-semibold text-[#22C55E]">Wahaj Ahmad</h3>
-                <p className="text-gray-700">Founding Member</p>
-              </div>
-
-              {/* Team Member 3 */}
-              <div className="bg-white shadow-md rounded-lg p-4 text-center">
-                <Image
-                  src="/LeadersImages/Mahera-Sajid.webp"
-                  alt="Mahera Sajid"
-                  width={96}
-                  height={96}
-                  className="rounded-full mx-auto mb-4 h-24 w-24 object-cover"
-                />
-                <h3 className="font-semibold text-[#22C55E]">Mahera Sajid</h3>
-                <p className="text-gray-700">
-                  Founding Member (IT Professional)
-                </p>
-              </div>
-
-              {/* Team Member 4 */}
-              <div className="bg-white shadow-md rounded-lg p-4 text-center">
-                <Image
-                  src="/LeadersImages/Farooq-Shah-Khan.webp"
-                  alt="Farooq Shah Khan"
-                  width={96}
-                  height={96}
-                  className="rounded-full mx-auto mb-4 h-24 w-24 object-cover"
-                />
-                <h3 className="font-semibold text-[#22C55E]">
-                  Farooq Shah Khan
-                </h3>
-                <p className="text-gray-700">Founding Member (Law student)</p>
-              </div>
-
-              {/* Team Member 5 */}
-              <div className="bg-white shadow-md rounded-lg p-4 text-center">
-                <Image
-                  src="/LeadersImages/Ahmad-Maaz-Shafqat.webp"
-                  alt="Ahmad Maaz Shafqat"
-                  width={96}
-                  height={96}
-                  className="rounded-full mx-auto mb-4 h-24 w-24 object-cover"
-                />
-                <h3 className="font-semibold text-[#22C55E]">
-                  Ahmad Maaz Shafqat
-                </h3>
-                <p className="text-gray-700">
-                  Media Director Save Gaza Campaign
-                </p>
-              </div>
-
-              {/* Team Member 6 */}
-              <div className="bg-white shadow-md rounded-lg p-4 text-center">
-                <Image
-                  src="/LeadersImages/Tayyaba-Durrani.webp"
-                  alt="Tayyaba Durrani"
-                  width={96}
-                  height={96}
-                  className="rounded-full mx-auto mb-4 h-24 w-24 object-cover"
-                />
-                <h3 className="font-semibold text-[#22C55E]">
-                  Tayyaba Durrani
-                </h3>
-                <p className="text-gray-700">Executive Team Member</p>
-              </div>
-
-              {/* Team Member 7 */}
-              <div className="bg-white shadow-md rounded-lg p-4 text-center">
-                <Image
-                  src="/LeadersImages/Dr-Sohaib-Khalid.webp"
-                  alt="Dr Sohaib Khalid"
-                  width={96}
-                  height={96}
-                  className="rounded-full mx-auto mb-4 h-24 w-24 object-cover"
-                />
-                <h3 className="font-semibold text-[#22C55E]">
-                  Dr Sohaib Khalid
-                </h3>
-                <p className="text-gray-700">
-                  Executive Team Member (Urologist)
-                </p>
-              </div>
-
-              {/* Team Member 8 */}
-              <div className="bg-white shadow-md rounded-lg p-4 text-center">
-                <Image
-                  src="/LeadersImages/Syed-Bilal-Hamdani.webp"
-                  alt="Syed Bilal Hamdani"
-                  width={96}
-                  height={96}
-                  className="rounded-full mx-auto mb-4 h-24 w-24 object-cover"
-                />
-                <h3 className="font-semibold text-[#22C55E]">
-                  Syed Bilal Hamdani
-                </h3>
-                <p className="text-gray-700">
-                  Executive Team Member & IIUI Team Lead
-                </p>
-              </div>
-
-              {/* Team Member 9 */}
-              <div className="bg-white shadow-md rounded-lg p-4 text-center">
-                <Image
-                  src="/LeadersImages/Mushahid-Hussain-Sayed.webp"
-                  alt="Mushahid Hussain Sayed"
-                  width={96}
-                  height={96}
-                  className="rounded-full mx-auto mb-4 h-24 w-24 object-cover"
-                />
-                <h3 className="font-semibold text-[#22C55E]">
-                  Mushahid Hussain Sayed
-                </h3>
-                <p className="text-gray-700">Ex Member of Senate</p>
-              </div>
-            </div>
-          </section>
-
           {/* Section: Achievements */}
-          <section className="bg-blue-50 py-12">
-            <h2 className="font-extrabold text-center text-4xl lg:text-5xl mb-12 text-gray-800">
+          <section className="py-10">
+            <h2 className="font-extrabold text-center text-3xl lg:text-4xl mb-10 text-gray-800">
               Our Achievements
             </h2>
             <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 px-4">
@@ -265,11 +117,11 @@ export default function AboutUs() {
                   height={400}
                   className="w-full object-cover h-64 sm:h-72 lg:h-80"
                 />
-                <div className="p-6 text-center">
-                  <h3 className="font-bold text-xl lg:text-2xl mb-3 text-gray-700">
+                <div className="p-4 text-center">
+                  <h3 className="font-bold text-lg lg:text-xl mb-3 text-gray-700">
                     42 Days Protest at D-Chowk, Islamabad
                   </h3>
-                  <p className="text-gray-600 text-md leading-relaxed">
+                  <p className="text-gray-600 text-sm lg:text-md leading-relaxed">
                     Conducted a 42-day protest at D-Chowk, Islamabad, to demand
                     justice and raise awareness about the plight of Gaza. This
                     monumental effort brought significant attention to our
@@ -286,11 +138,11 @@ export default function AboutUs() {
                   height={400}
                   className="w-full object-cover h-64 sm:h-72 lg:h-80"
                 />
-                <div className="p-6 text-center">
-                  <h3 className="font-bold text-xl lg:text-2xl mb-3 text-gray-700">
+                <div className="p-4 text-center">
+                  <h3 className="font-bold text-lg lg:text-xl mb-3 text-gray-700">
                     Agreements with the Government
                   </h3>
-                  <p className="text-gray-600 text-md leading-relaxed">
+                  <p className="text-gray-600 text-sm lg:text-md leading-relaxed">
                     Successfully reached agreements with government
                     representatives to address concerns and further our
                     campaign's objectives, marking a pivotal step in our
@@ -300,16 +152,15 @@ export default function AboutUs() {
               </div>
             </div>
           </section>
-
           {/* Section: Tribute to the Martyr */}
-          <section className="py-12 bg-gradient-to-r from-blue-50 via-white to-blue-50">
+          <section className="py-10">
             <div className="container mx-auto px-6">
               {/* Heading Section */}
-              <div className="text-center mb-10">
-                <h2 className="font-extrabold text-3xl lg:text-5xl text-gray-800">
+              <div className="text-center mb-8">
+                <h2 className="font-extrabold text-2xl lg:text-4xl text-gray-800">
                   In Memory of Our Martyr
                 </h2>
-                <p className="text-gray-700 mt-4 text-lg lg:text-xl max-w-3xl mx-auto">
+                <p className="text-gray-700 mt-4 text-base lg:text-lg max-w-3xl mx-auto">
                   A tribute to the courage and sacrifice of{" "}
                   <strong className="text-red-500">Muhammad Roman Sajid</strong>
                   , whose ultimate sacrifice fueled our mission for justice and
@@ -332,11 +183,11 @@ export default function AboutUs() {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-8 md:p-12 flex flex-col justify-center md:w-2/3 text-center md:text-left">
-                  <h3 className="font-bold text-2xl lg:text-3xl mb-4 text-green-600">
+                <div className="p-6 md:p-8 flex flex-col justify-center md:w-2/3 text-center md:text-left">
+                  <h3 className="font-bold text-xl lg:text-2xl mb-4 text-green-600">
                     Muhammad Roman Sajid
                   </h3>
-                  <p className="text-gray-700 leading-relaxed mb-6 text-sm lg:text-lg">
+                  <p className="text-gray-700 leading-relaxed mb-4 text-sm lg:text-base">
                     Muhammad Roman Sajid was a brave soul who stood for the
                     cause with unwavering courage. On May 20th, 2024, at 3:00
                     AM, during a peaceful protest at D-Chowk, Islamabad, he,
@@ -347,14 +198,13 @@ export default function AboutUs() {
                     beacon of hope, a symbol of unwavering dedication, and a
                     powerful call for justice.
                   </p>
-                  <p className="text-gray-600 italic text-sm lg:text-lg">
+                  <p className="text-gray-600 italic text-sm lg:text-base">
                     "From the river to the sea, Palestine will be free."
                   </p>
                 </div>
               </div>
             </div>
           </section>
-
           <ContactAndSubscribe />
         </main>
       </Wrapper>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { BiMenu } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import Menu from "./Menu";
@@ -10,11 +11,25 @@ const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showCatMenu, setShowCatMenu] = useState(false);
   const [showSortMenu, setShowSortMenu] = useState(false);
+  const router = useRouter();
+
+  const handleJoinUs = () => {
+    if (router.pathname === "/") {
+      // Scroll to HowYouHelp section if on the homepage
+      const section = document.getElementById("how-you-can-help");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Redirect to homepage with a query
+      router.push("/?scrollTo=how-you-can-help");
+    }
+  };
 
   return (
     <div className="bg-white w-screen">
       <div className="flex pt-3 pb-1 items-center justify-between mx-6">
-        {/* Logo of the Site */}
+        {/* Logo */}
         <Link href="/">
           <div className="flex items-center space-x-4">
             <Image
@@ -30,7 +45,7 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Navbar Menu items, category sub-menu */}
+        {/* Navbar Menu */}
         <Menu
           showCatMenu={showCatMenu}
           setShowCatMenu={setShowCatMenu}
@@ -62,15 +77,15 @@ const Header = () => {
             />
           )}
 
-          <Link
-            href="/login"
-            className="hidden md:flex bg-red-600 hover:bg-red-800 text-white px-6 py-2 rounded-md transition-colors duration-300"
+          <button
+            onClick={handleJoinUs}
+            className="hidden md:flex bg-[#22C55E] hover:bg-[#D0312D] text-white font-bold px-6 py-2 rounded-md transition-colors duration-300"
           >
             Join Us
-          </Link>
+          </button>
           <Link
             href="/login"
-            className="hidden md:flex bg-green-500 hover:bg-green-600 mr-2 text-white px-8 py-2 rounded-md transition-colors duration-300"
+            className="hidden md:flex bg-[#22C55E] hover:bg-[#D0312D] mr-2 text-white font-bold px-8 py-2 rounded-md transition-colors duration-300"
           >
             Login
           </Link>

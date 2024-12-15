@@ -1,24 +1,33 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import HeroBanner from "@/components/HeroBanner";
 import DeathToll from "@/components/DeathToll";
 import About from "@/components/About";
 import FAQs from "@/components/FAQs";
-import LeadersSlider from "@/components/LeadersSlider";
+import Team from "@/components/Team";
 import Wrapper from "@/components/Wrapper";
 import { useInView } from "react-hook-inview";
-import { motion } from "framer-motion";
 import HowYouHelp from "@/components/HowYouHelp";
 import Reviews from "@/components/Reviews";
-import ImageSec from "./ImageSec";
 import "./fontawesome";
 import UnitingPak from "@/components/UnitingPak";
 import ContactAndSubscribe from "@/components/ContactAndSubscribe";
-import NewsPage from "@/components/NewsPage";
+import Video from "@/components/Video";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [ref, inView] = useInView();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.query.scrollTo === "how-you-can-help") {
+      const section = document.getElementById("how-you-can-help");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [router.query]);
 
   return (
     <main className="overflow-x-hidden w-screen z-20">
@@ -26,14 +35,16 @@ export default function Home() {
       <Wrapper className="bg-blue-50 pt-20">
         <About />
         <DeathToll />
-        <HowYouHelp />
+        <section id="how-you-can-help">
+          <HowYouHelp />
+        </section>
         <UnitingPak />
-        {/* <NewsPage /> */}
+        <Video />
         <FAQs />
         <ContactAndSubscribe />
         <Reviews />
+        <Team />
       </Wrapper>
-      <LeadersSlider />
     </main>
   );
 }
