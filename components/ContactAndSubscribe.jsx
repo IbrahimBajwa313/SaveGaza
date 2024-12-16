@@ -59,7 +59,8 @@ const ContactAndSubscribe = () => {
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
             >
-              6 Herzen St, Kyiv
+              SGC Office S#23, 3rd Floor, Malikabad Centre near 6th Rd, Murree
+              Rd, Rawalpindi
             </a>
           }
         />
