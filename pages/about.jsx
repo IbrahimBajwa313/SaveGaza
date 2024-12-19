@@ -11,7 +11,7 @@ export default function AboutUs() {
     <div className="min-h-screen bg-blue-50">
       <Wrapper>
         {/* Main Content */}
-        <main className="container mx-auto px-4 py-8 space-y-10">
+        <main className="container mx-auto px-4 py-4 space-y-10">
           <About />
           <section className="bg-white p-4 md:p-6 rounded-3xl shadow-md">
             <h2 className="font-extrabold text-center text-xl sm:text-2xl lg:text-3xl mb-4">

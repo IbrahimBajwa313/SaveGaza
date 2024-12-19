@@ -9,8 +9,8 @@ export default function GroundActivistForm() {
     phone: "",
     profession: "",
     institute: "",
-    contribution: "",
-    category: "ground", // Default category for this form
+    age: "", // Added age field
+    category: "ground",
   });
 
   const [errors, setErrors] = useState({});
@@ -33,6 +33,8 @@ export default function GroundActivistForm() {
       newErrors.profession = "Profession is required.";
     if (!formData.institute.trim())
       newErrors.institute = "Institute is required.";
+    if (!formData.age.trim() || isNaN(formData.age) || formData.age <= 0)
+      newErrors.age = "Valid age is required."; // Age validation
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -44,7 +46,7 @@ export default function GroundActivistForm() {
     if (!validateForm()) return;
 
     try {
-      await axios.post("/api/joinAPI", formData); // Updated endpoint
+      await axios.post("/api/groundActivist", formData);
       alert("Ground Activist details have been submitted!");
     } catch (error) {
       alert("Something went wrong. Please try again.");
@@ -107,7 +109,7 @@ export default function GroundActivistForm() {
           {/* Phone */}
           <div>
             <label className="block text-base font-semibold text-gray-700">
-              Phone No (Optional)
+              Phone No <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -116,6 +118,21 @@ export default function GroundActivistForm() {
               onChange={handleChange}
               className="w-full p-3 border border-gray-300 rounded-lg mt-2"
             />
+          </div>
+
+          {/* Age */}
+          <div>
+            <label className="block text-base font-semibold text-gray-700">
+              Age<span className="text-red-500">*</span>
+            </label>
+            <input
+              type="number"
+              name="age"
+              value={formData.age}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded-lg mt-2"
+            />
+            {errors.age && <p className="text-red-500">{errors.age}</p>}
           </div>
 
           {/* Profession */}
@@ -138,7 +155,7 @@ export default function GroundActivistForm() {
           {/* Institute */}
           <div>
             <label className="block text-base font-semibold text-gray-700">
-              Institute<span className="text-red-500">*</span>
+              Educational Institute<span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -150,20 +167,6 @@ export default function GroundActivistForm() {
             {errors.institute && (
               <p className="text-red-500">{errors.institute}</p>
             )}
-          </div>
-
-          {/* Contribution */}
-          <div>
-            <label className="block text-base font-semibold text-gray-700">
-              Would you like to contribute in any other way? (Optional)
-            </label>
-            <textarea
-              name="contribution"
-              value={formData.contribution}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg mt-2"
-              rows={3}
-            />
           </div>
 
           {/* Submit Button */}
