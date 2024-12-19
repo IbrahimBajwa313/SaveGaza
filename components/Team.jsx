@@ -16,6 +16,12 @@ const Team = () => {
       role: "Founder Save Gaza Campaign",
     },
     {
+      src: "/LeadersImages/Mushahid-Hussain-Sayed.webp",
+      alt: "Mushahid Hussain Sayed",
+      name: "Mushahid Hussain Sayed",
+      role: "Ex Member of Senate",
+    },
+    {
       src: "/LeadersImages/Wahaj-Ahmad.webp",
       alt: "Wahaj Ahmad",
       name: "Wahaj Ahmad",
@@ -33,12 +39,7 @@ const Team = () => {
       name: "Farooq Shah Khan",
       role: "Founding Member (Law student)",
     },
-    {
-      src: "/LeadersImages/Ahmad-Maaz-Shafqat.webp",
-      alt: "Ahmad Maaz Shafqat",
-      name: "Ahmad Maaz Shafqat",
-      role: "Media Director Save Gaza Campaign",
-    },
+    
     {
       src: "/LeadersImages/Tayyaba-Durrani.webp",
       alt: "Tayyaba Durrani",
@@ -50,19 +51,7 @@ const Team = () => {
       alt: "Dr Sohaib Khalid",
       name: "Dr Sohaib Khalid",
       role: "Executive Team Member (Urologist)",
-    },
-    {
-      src: "/LeadersImages/Syed-Bilal-Hamdani.webp",
-      alt: "Syed Bilal Hamdani",
-      name: "Syed Bilal Hamdani",
-      role: "Executive Team Member & IIUI Team Lead",
-    },
-    {
-      src: "/LeadersImages/Mushahid-Hussain-Sayed.webp",
-      alt: "Mushahid Hussain Sayed",
-      name: "Mushahid Hussain Sayed",
-      role: "Ex Member of Senate",
-    },
+    }, 
   ];
 
   const [showAll, setShowAll] = useState(false);

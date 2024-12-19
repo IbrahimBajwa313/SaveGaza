@@ -16,6 +16,6 @@ const socialMediaActivistSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const SocialMediaActivist = mongoose.model( "SocialMediaActivist", socialMediaActivistSchema );
+const SocialMediaActivist = mongoose.models.SocialMediaActivist ||mongoose.model( "SocialMediaActivist", socialMediaActivistSchema );
 
 module.exports = SocialMediaActivist;

@@ -98,8 +98,9 @@ const Contact = () => {
             </p>
             {/* Social Icons */}
             <div className="flex justify-center mt-4 space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white">
-                {/* X Icon */}
+              <a 
+                href="https://m.facebook.com/SaveGazaCampaign/"
+                className="text-gray-400 hover:text-white">
                 <svg
                   fill="currentColor"
                   className="w-6 h-6"
