@@ -12,7 +12,7 @@ export default function SocialMediaActivistForm() {
     thoughts: "",
     pledge: "",
     otherPledge: "", // State for the other pledge text
-    otherSkill: "", // New state for the other skill text
+    otherSkill: "",   // State for the other skill text
   });
 
   const [errors, setErrors] = useState({});
@@ -39,10 +39,11 @@ export default function SocialMediaActivistForm() {
     let newErrors = {};
     if (!formData.name.trim()) newErrors.name = "Name is required.";
     if (!formData.city.trim()) newErrors.city = "City is required.";
+    if (!formData.phone.trim()) newErrors.phone = "Phone number is required.";
     if (formData.platforms.length === 0)
       newErrors.platforms = "Select at least one platform.";
     if (formData.skills.length === 0 && !formData.otherSkill.trim())
-      newErrors.skills = "Select at least one field you can help with.";
+      newErrors.skills = "Select at least one skill or specify another.";
     if (!formData.thoughts.trim())
       newErrors.thoughts = "Please share your thoughts.";
     if (!formData.pledge.trim())
@@ -57,7 +58,7 @@ export default function SocialMediaActivistForm() {
     if (!validateForm()) return;
 
     try {
-      await axios.post("/api/joinAPI", formData);
+      await axios.post("/api/socialMediaActivist", formData);
       alert("Social Media Activist details have been submitted!");
     } catch (error) {
       console.error("Submission error:", error);
@@ -106,7 +107,7 @@ export default function SocialMediaActivistForm() {
           {/* Phone No */}
           <div>
             <label className="block text-base font-semibold text-gray-700">
-              Phone No (Optional)
+              Phone No <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -115,6 +116,7 @@ export default function SocialMediaActivistForm() {
               onChange={handleChange}
               className="w-full p-3 border border-gray-300 rounded-lg mt-2"
             />
+            {errors.phone && <p className="text-red-500">{errors.phone}</p>}
           </div>
 
           {/* City */}

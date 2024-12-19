@@ -15,7 +15,7 @@ const HowYouCanHelp = () => {
       description: "Become part of our movement to make a difference.",
       button: {
         label: "Join Now",
-        link: "/ground-activist-form", // Replace with the form link
+        link: "/groundActivistForm", // Replace with the form link
       },
     },
     {
@@ -35,7 +35,7 @@ const HowYouCanHelp = () => {
       description: "Spread awareness and support through social platforms.",
       button: {
         label: "Join Now",
-        link: "social-media-activist-form", // Replace with the form link
+        link: "/socialMediaActivistForm", // Replace with the form link
       },
     },
     {

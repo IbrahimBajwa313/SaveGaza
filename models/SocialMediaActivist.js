@@ -1,15 +1,21 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const SocialMediaActivistSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  email: { type: String }, // optional
-  mobile: { type: String }, // optional
-  university: { type: String, required: true },
-  skills: { type: String, required: true },
-  profession: { type: String, required: true },
-  category: { type: String, default: 'Social Media Activist' },
-  city: { type: String, required: true },
-  age: { type: Number, required: true }
-});
+const socialMediaActivistSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    email: { type: String, required: false },
+    phone: { type: String, required: true },
+    city: { type: String, required: true },
+    platforms: { type: [String], required: true },
+    skills: { type: [String], required: true },
+    thoughts: { type: String, required: true },
+    pledge: { type: String, required: true },
+    otherPledge: { type: String, required: false },
+    otherSkill: { type: String, required: false },
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('SocialMediaActivist', SocialMediaActivistSchema);
+const SocialMediaActivist = mongoose.model( "SocialMediaActivist", socialMediaActivistSchema );
+
+module.exports = SocialMediaActivist;
