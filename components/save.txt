@@ -1,0 +1,10 @@
+import Redis from "ioredis"
+
+const client = new Redis("rediss://default:AWw2AAIjcDExZWE5NTdmNGMwZjE0ZWY0YjcxZmI1YTJlOGUxZDlhZHAxMA@sure-crab-27702.upstash.io:6379");
+await client.set('foo', 'bar');
+
+
+
+
+UPSTASH_REDIS_REST_URL="https://sure-crab-27702.upstash.io"
+UPSTASH_REDIS_REST_TOKEN="AWw2AAIjcDExZWE5NTdmNGMwZjE0ZWY0YjcxZmI1YTJlOGUxZDlhZHAxMA"
