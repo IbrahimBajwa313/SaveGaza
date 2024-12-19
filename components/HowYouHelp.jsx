@@ -25,7 +25,7 @@ const HowYouCanHelp = () => {
       description: "Represent us at your university and inspire others.",
       button: {
         label: "Join Now",
-        link: "university-ambassador-form", // Replace with the form link
+        link: "/universityAmbassadorForm", // Replace with the form link
       },
     },
     {

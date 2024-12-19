@@ -2,6 +2,8 @@ import connectDB from "../middleware/mongoose";
 import SocialMediaActivist from "@/models/SocialMediaActivist"; // Ensure the model path is correct
 
 const handler = async (req, res) => {
+  await connectDB(); // Ensure the database connection is established
+
   if (req.method === "POST") {
     const { name, email, phone, city, platforms, skills, thoughts, pledge, otherPledge, otherSkill } = req.body;
 
@@ -40,4 +42,4 @@ const handler = async (req, res) => {
   }
 };
 
-export default connectDB(handler);
+export default handler;

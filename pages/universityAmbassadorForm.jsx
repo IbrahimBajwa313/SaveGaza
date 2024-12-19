@@ -29,11 +29,10 @@ export default function UniversityAmbassadorForm() {
     let newErrors = {};
     if (!formData.name.trim()) newErrors.name = "Name is required.";
     if (!formData.city.trim()) newErrors.city = "City is required.";
-    if (!formData.profession.trim())
-      newErrors.profession = "Profession is required.";
     if (!formData.universityName.trim())
       newErrors.universityName = "University Name is required.";
     if (!formData.skills.trim()) newErrors.skills = "Skills are required.";
+    if (!formData.phone.trim()) newErrors.phone = "Phone number is required.";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -45,17 +44,13 @@ export default function UniversityAmbassadorForm() {
     if (!validateForm()) return;
 
     try {
-      // Replace with the actual API endpoint URL
-      const response = await axios.post("/api/joinAPI", formData);
-
-      // Check if the API response is successful
-      if (response.status === 200) {
+      const response = await axios.post("/api/universityAmbassador", formData);
+      if (response.status === 201) {
         alert("University Ambassador details have been submitted!");
       } else {
         alert("Submission failed. Please try again.");
       }
     } catch (error) {
-      // Log the error for debugging
       console.error("There was an error submitting the form:", error);
       alert("Something went wrong. Please try again.");
     }
@@ -99,25 +94,10 @@ export default function UniversityAmbassadorForm() {
             />
           </div>
 
-          {/* City */}
-          <div>
-            <label className="block text-base font-semibold text-gray-700">
-              City<span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="city"
-              value={formData.city}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg mt-2"
-            />
-            {errors.city && <p className="text-red-500">{errors.city}</p>}
-          </div>
-
           {/* Phone No */}
           <div>
             <label className="block text-base font-semibold text-gray-700">
-              Phone No (Optional)
+              Phone No <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -126,23 +106,7 @@ export default function UniversityAmbassadorForm() {
               onChange={handleChange}
               className="w-full p-3 border border-gray-300 rounded-lg mt-2"
             />
-          </div>
-
-          {/* Profession */}
-          <div>
-            <label className="block text-base font-semibold text-gray-700">
-              Profession<span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="profession"
-              value={formData.profession}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-lg mt-2"
-            />
-            {errors.profession && (
-              <p className="text-red-500">{errors.profession}</p>
-            )}
+            {errors.phone && <p className="text-red-500">{errors.phone}</p>}
           </div>
 
           {/* University Name */}
@@ -160,6 +124,35 @@ export default function UniversityAmbassadorForm() {
             {errors.universityName && (
               <p className="text-red-500">{errors.universityName}</p>
             )}
+          </div>
+
+          {/* City */}
+          <div>
+            <label className="block text-base font-semibold text-gray-700">
+              City<span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              name="city"
+              value={formData.city}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded-lg mt-2"
+            />
+            {errors.city && <p className="text-red-500">{errors.city}</p>}
+          </div>
+
+          {/* Profession */}
+          <div>
+            <label className="block text-base font-semibold text-gray-700">
+              Profession (Optional)
+            </label>
+            <input
+              type="text"
+              name="profession"
+              value={formData.profession}
+              onChange={handleChange}
+              className="w-full p-3 border border-gray-300 rounded-lg mt-2"
+            />
           </div>
 
           {/* Skills */}
