@@ -1,11 +1,21 @@
 import connectDB from "../middleware/mongoose";
-import SocialMediaActivist from "@/models/SocialMediaActivist"; // Ensure the model path is correct
+import SocialMediaActivist from "@/models/SocialMediaActivist";
 
 const handler = async (req, res) => {
-  await connectDB(); // Ensure the database connection is established
-
+  await connectDB();
   if (req.method === "POST") {
-    const { name, email, phone, city, platforms, skills, thoughts, pledge, otherPledge, otherSkill } = req.body;
+    const {
+      name,
+      email,
+      phone,
+      city,
+      platforms,
+      skills,
+      thoughts,
+      pledge,
+      otherPledge,
+      otherSkill,
+    } = req.body;
 
     try {
       const socialMediaActivist = new SocialMediaActivist({
@@ -23,7 +33,9 @@ const handler = async (req, res) => {
       });
 
       await socialMediaActivist.save();
-      res.status(201).json({ message: "Social Media Activist details added successfully" });
+      res
+        .status(201)
+        .json({ message: "Social Media Activist details added successfully" });
     } catch (error) {
       console.error("Error adding Social Media Activist:", error);
       res.status(500).json({ error: "Failed to add Social Media Activist" });

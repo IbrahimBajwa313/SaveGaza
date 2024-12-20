@@ -1,9 +1,10 @@
 import connectDB from "../middleware/mongoose";
-import GroundActivist from "@/models/GroundActivist"; // Ensure the model path is correct
+import GroundActivist from "@/models/GroundActivist";
 
 const handler = async (req, res) => {
   if (req.method === "POST") {
-    const { name, email, city, phone, profession, institute, age, category } = req.body;
+    const { name, email, city, phone, profession, institute, age, category } =
+      req.body;
 
     try {
       const groundActivist = new GroundActivist({
@@ -19,7 +20,9 @@ const handler = async (req, res) => {
       });
 
       await groundActivist.save();
-      res.status(201).json({ message: "Ground Activist details added successfully" });
+      res
+        .status(201)
+        .json({ message: "Ground Activist details added successfully" });
     } catch (error) {
       console.error("Error adding Ground Activist:", error);
       res.status(500).json({ error: "Failed to add Ground Activist" });

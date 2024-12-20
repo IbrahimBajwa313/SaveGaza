@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function GroundActivistForm() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,9 @@ export default function GroundActivistForm() {
     category: "ground",
   });
 
+  const [message, setMessage] = useState("");
+  const [messageColor, setMessageColor] = useState("");
+  const router = useRouter();
   const [errors, setErrors] = useState({});
 
   // Handle changes in input fields
@@ -47,9 +51,25 @@ export default function GroundActivistForm() {
 
     try {
       await axios.post("/api/groundActivist", formData);
-      alert("Ground Activist details have been submitted!");
+      setMessage("Ground Activist details have been submitted!");
+      setMessageColor("#22C55E");
+      setFormData({
+        name: "",
+        email: "",
+        city: "",
+        phone: "",
+        profession: "",
+        institute: "",
+        age: "",
+        category: "ground",
+      });
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
     } catch (error) {
-      alert("Something went wrong. Please try again.");
+      console.error("Submission error:", error);
+      setMessage("Something went wrong. Please try again.");
+      setMessageColor("#D0312D");
     }
   };
 
@@ -177,6 +197,11 @@ export default function GroundActivistForm() {
             Submit
           </button>
         </form>
+        {message && (
+          <p style={{ color: messageColor }} className="mt-4 text-center">
+            {message}
+          </p>
+        )}
       </section>
     </div>
   );

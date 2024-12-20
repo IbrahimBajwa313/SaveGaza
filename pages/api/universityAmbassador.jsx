@@ -1,11 +1,20 @@
 import connectDB from "../middleware/mongoose";
-import UniversityAmbassador from "@/models/UniversityAmbassador"; // Ensure the model path is correct
+import UniversityAmbassador from "@/models/UniversityAmbassador";
 
 const handler = async (req, res) => {
-  await connectDB(); // Ensure the database connection is established
+  await connectDB();
 
   if (req.method === "POST") {
-    const { name, email, city, phone, profession, universityName, skills, contribution } = req.body;
+    const {
+      name,
+      email,
+      city,
+      phone,
+      profession,
+      universityName,
+      skills,
+      contribution,
+    } = req.body;
 
     try {
       const universityAmbassador = new UniversityAmbassador({
@@ -21,7 +30,9 @@ const handler = async (req, res) => {
       });
 
       await universityAmbassador.save();
-      res.status(201).json({ message: "University Ambassador details added successfully" });
+      res
+        .status(201)
+        .json({ message: "University Ambassador details added successfully" });
     } catch (error) {
       console.error("Error adding University Ambassador:", error);
       res.status(500).json({ error: "Failed to add University Ambassador" });

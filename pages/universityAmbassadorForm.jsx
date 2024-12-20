@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function UniversityAmbassadorForm() {
   const [formData, setFormData] = useState({
@@ -13,6 +14,9 @@ export default function UniversityAmbassadorForm() {
     contribution: "",
   });
 
+  const [message, setMessage] = useState("");
+  const [messageColor, setMessageColor] = useState("");
+  const router = useRouter();
   const [errors, setErrors] = useState({});
 
   // Handle changes in input fields
@@ -46,13 +50,28 @@ export default function UniversityAmbassadorForm() {
     try {
       const response = await axios.post("/api/universityAmbassador", formData);
       if (response.status === 201) {
-        alert("University Ambassador details have been submitted!");
+        setMessage("University Ambassador details have been submitted!");
+        setMessageColor("#22C55E");
+        setFormData({
+          name: "",
+          email: "",
+          city: "",
+          phone: "",
+          profession: "",
+          universityName: "",
+          skills: "",
+          contribution: "",
+        });
+        setTimeout(() => {
+          router.push("/");
+        }, 2000);
       } else {
         alert("Submission failed. Please try again.");
       }
     } catch (error) {
-      console.error("There was an error submitting the form:", error);
-      alert("Something went wrong. Please try again.");
+      console.error("Submission error:", error);
+      setMessage("Something went wrong. Please try again.");
+      setMessageColor("D0312D");
     }
   };
 
@@ -192,6 +211,11 @@ export default function UniversityAmbassadorForm() {
             Submit
           </button>
         </form>
+        {message && (
+          <p style={{ color: messageColor }} className="mt-4 text-center">
+            {message}
+          </p>
+        )}
       </section>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function SocialMediaActivistForm() {
   const [formData, setFormData] = useState({
@@ -12,9 +13,12 @@ export default function SocialMediaActivistForm() {
     thoughts: "",
     pledge: "",
     otherPledge: "", // State for the other pledge text
-    otherSkill: "",   // State for the other skill text
+    otherSkill: "", // State for the other skill text
   });
 
+  const [message, setMessage] = useState("");
+  const [messageColor, setMessageColor] = useState("");
+  const router = useRouter();
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -59,10 +63,27 @@ export default function SocialMediaActivistForm() {
 
     try {
       await axios.post("/api/socialMediaActivist", formData);
-      alert("Social Media Activist details have been submitted!");
+      setMessage("Social Media Activist details have been submitted!");
+      setMessageColor("#22C55E");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        city: "",
+        platforms: [],
+        skills: [],
+        thoughts: "",
+        pledge: "",
+        otherPledge: "",
+        otherSkill: "",
+      });
+      setTimeout(() => {
+        router.push("/");
+      }, 2000);
     } catch (error) {
       console.error("Submission error:", error);
-      alert("Something went wrong. Please try again.");
+      setMessage("Something went wrong. Please try again.");
+      setMessageColor("D0312D");
     }
   };
 
@@ -287,6 +308,11 @@ export default function SocialMediaActivistForm() {
             Submit
           </button>
         </form>
+        {message && (
+          <p style={{ color: messageColor }} className="mt-4 text-center">
+            {message}
+          </p>
+        )}
       </section>
     </div>
   );
