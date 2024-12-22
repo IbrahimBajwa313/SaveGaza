@@ -38,12 +38,12 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   const [subTotal, setSubTotal] = useState(0);
-
+  // bottom-28 right-8
   return (
     <>
       <Link
         href="https://wa.me/923325900041" // Replace with the actual WhatsApp number
-        className="fixed bottom-4 right-1  z-[9999] rounded-full bg-white/[0.25] text-green-500 duration-200 hover:scale-110 cursor-pointer"
+        className="fixed bottom-28 right-8  z-[9999] rounded-full bg-white/[0.25] text-green-500 duration-200 hover:scale-110 cursor-pointer"
         target="_blank"
         rel="noopener noreferrer"
         style={{ zIndex: 9999 }}
@@ -76,7 +76,7 @@ export default function App({ Component, pageProps }) {
         rel="stylesheet"
       />
       
-      <script src="//code.tidio.co/oa2rdanrhvguvw5ffgz012it3mptpgxn.js" async></script>
+      <script   src="//code.tidio.co/oa2rdanrhvguvw5ffgz012it3mptpgxn.js" async></script>
     </>
   );
 }
