@@ -11,8 +11,7 @@ import {
   useContext,
   oneMinusQty,
 } from "react";
-import Headroom from "react-headroom";
-import Chatbot from "@/components/Chatbot";
+import Headroom from "react-headroom"; 
 
 export const productInfo = createContext();
 
