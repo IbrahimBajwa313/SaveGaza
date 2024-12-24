@@ -6,7 +6,7 @@ const data = [
     { id: 1, name: 'About', url: '/about' },
     { id: 2, name: 'SGC Shop', url: '/pageUnderCons' },
     { id: 3, name: 'SGC News', url: '/pageUnderCons' },
-    { id: 4, name: 'Gaza Donations', url: '/pageUnderCons' }, 
+    { id: 4, name: 'SGC Relief Activities', url: 'https://sgc-relief-activities-2st2.vercel.app/' }, 
     { id: 5, name: 'Contact Us', url: '/contact' }, 
 ];
 

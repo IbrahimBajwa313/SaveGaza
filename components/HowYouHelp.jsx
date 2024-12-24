@@ -45,7 +45,8 @@ const HowYouCanHelp = () => {
       description: "Your contribution can bring meaningful change.",
       button: {
         label: "Donate Now",
-        link: "", // Replace with your donation module link
+        link: "https://sgc-relief-activities-2st2.vercel.app/", // Replace with your donation module link
+        target: "_blank",
       },
     },
   ];
