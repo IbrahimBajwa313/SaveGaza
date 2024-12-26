@@ -13,6 +13,7 @@ import "./fontawesome";
 import UnitingPak from "@/components/UnitingPak";
 import ContactAndSubscribe from "@/components/ContactAndSubscribe";
 import Video from "@/components/Video";
+import DonationComponent from "@/components/DonationComponent";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -35,6 +36,7 @@ export default function Home() {
       <Wrapper className="bg-blue-50 pt-20">
         <About />
         <DeathToll />
+        <DonationComponent />
         <section id="how-you-can-help">
           <HowYouHelp />
         </section>

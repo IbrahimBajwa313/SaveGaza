@@ -50,8 +50,10 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.20.0",
     "react-scripts": "^3.0.1",
+    "react-slick": "^0.30.3",
     "react-toastify": "^9.1.1",
     "recharts": "^2.12.7",
+    "slick-carousel": "^1.8.1",
     "swiper": "^11.1.14",
     "swr": "^2.1.0",
     "yarn": "^1.22.21"
