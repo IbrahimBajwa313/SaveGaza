@@ -4,6 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import "@/styles/globals.css";
 import Head from "next/head";
+import { UserProvider } from "../context/UserContext";
 import {
   useState,
   useEffect,
@@ -11,7 +12,7 @@ import {
   useContext,
   oneMinusQty,
 } from "react";
-import Headroom from "react-headroom"; 
+import Headroom from "react-headroom";
 
 export const productInfo = createContext();
 
@@ -22,22 +23,6 @@ export function MyContext() {
 
 // App Function
 export default function App({ Component, pageProps }) {
-  const [cart, setCart] = useState({});
-
-  // Page will remain same after reload
-  useEffect(() => {
-    try {
-      if (localStorage.getItem("cart")) {
-        setCart(JSON.parse(localStorage.getItem("cart")));
-      }
-    } catch (error) {
-      console.error(error);
-      localStorage.clear();
-    }
-  }, []);
-
-  const [subTotal, setSubTotal] = useState(0);
-  // bottom-28 right-8
   return (
     <>
       <Link
@@ -55,13 +40,16 @@ export default function App({ Component, pageProps }) {
         <title>Save Gaza Campaign</title>
       </Head>
 
+
       <Headroom>
         {/* <Header /> */}
         <Header />
       </Headroom>
 
-      <Component />
-
+      <UserProvider>
+        <Component {...pageProps} />
+      </UserProvider>
+      
       <Footer2 />
 
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -74,8 +62,11 @@ export default function App({ Component, pageProps }) {
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
         rel="stylesheet"
       />
-      
-      <script   src="//code.tidio.co/oa2rdanrhvguvw5ffgz012it3mptpgxn.js" async></script>
+
+      <script
+        src="//code.tidio.co/oa2rdanrhvguvw5ffgz012it3mptpgxn.js"
+        async
+      ></script>
     </>
   );
 }
