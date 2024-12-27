@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
@@ -26,7 +27,7 @@ const UnitingPak = () => {
               donating clothes, food, medicine and money. We with our partner
               Shaib Abi Talib want to make the most difference.
             </p>
-            <a
+            <Link
           href="https://sgc-relief-activities-2st2.vercel.app/" // Replace with your donation site URL
           target="_blank"
           rel="noopener noreferrer"
@@ -35,8 +36,8 @@ const UnitingPak = () => {
              md:text-lg md:px-8 
              lg:ml-16 lg:w-fit"
         >
-          Visit Our Gaza Activities
-        </a>
+          View Gaza Relief Activities
+        </Link>
           </div>
 
           {/* Right Side - Text */}
