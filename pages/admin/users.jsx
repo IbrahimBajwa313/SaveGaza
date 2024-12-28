@@ -70,7 +70,7 @@ export default function Users() {
     <div className="container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 pb-20 pt-8">
       <div className="flex justify-between mb-6">
         <h1 className="text-2xl font-semibold">
-          {!userRole ? "Info" : "All users"}
+          {userRole ? "Info" : "All users"}
         </h1>
         {userRole ? (
           <Link

@@ -28,6 +28,7 @@
     "eslint-config-next": "13.1.6",
     "formidable": "^3.5.2",
     "framer-motion": "^10.18.0",
+    "js-cookie": "^3.0.5",
     "locomotive-scroll": "^4.1.4",
     "md5": "^2.3.0",
     "mdb-react-ui-kit": "^9.0.0",
