@@ -5,14 +5,10 @@ import Link from "next/link";
 import "@/styles/globals.css";
 import Head from "next/head";
 import { UserProvider } from "../context/UserContext";
-import {
-  useState,
-  useEffect,
-  createContext,
-  useContext,
-  oneMinusQty,
-} from "react";
+import { useState, useEffect, createContext, useContext } from "react";
+import { useRouter } from "next/router";
 import Headroom from "react-headroom";
+import Loader from "@/components/Loader";
 
 export const productInfo = createContext();
 
@@ -21,8 +17,47 @@ export function MyContext() {
   return useContext(productInfo);
 }
 
-// App Function
+/// App Component
 export default function App({ Component, pageProps }) {
+  const [loading, setLoading] = useState(true);
+  const [adminPage, setAdminPage] = useState(false);
+  const [userRole, setUserRole] = useState(null);
+  const [subTotal, setSubTotal] = useState(0);
+
+  const router = useRouter();
+ 
+  // Initialize state and redirect logic
+  useEffect(() => {
+    const initializeApp = async () => {
+      try {
+        // Fetch user role
+        const role = localStorage.getItem("role");
+        setUserRole(role);
+
+        // Check user authentication and redirect
+        const storedUserData = localStorage.getItem("loggedInUser");
+        if (router.pathname.startsWith("/admin") && !storedUserData) {
+          router.push("/login");
+          return;
+        }
+
+        // Determine if the page is an admin page
+        setAdminPage(router.pathname.startsWith("/admin"));
+
+        setLoading(false); // Stop loading after checks
+      } catch (error) {
+        console.error("Error initializing app:", error);
+        localStorage.clear();
+        setLoading(false); // Ensure the loader stops
+      }
+    };
+
+    initializeApp();
+  }, [router]);
+
+  if (loading) {
+    return <Loader />; // Display loader while initializing
+  }
   return (
     <>
       <Link
@@ -40,7 +75,6 @@ export default function App({ Component, pageProps }) {
         <title>Save Gaza Campaign</title>
       </Head>
 
-
       <Headroom>
         {/* <Header /> */}
         <Header />
@@ -49,7 +83,7 @@ export default function App({ Component, pageProps }) {
       <UserProvider>
         <Component {...pageProps} />
       </UserProvider>
-      
+
       <Footer2 />
 
       <link rel="preconnect" href="https://fonts.googleapis.com" />

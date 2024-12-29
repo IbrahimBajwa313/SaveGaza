@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -6,22 +6,47 @@ import { BiMenu } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import Menu from "./Menu";
 import MenuMobile from "./MenuMobile";
+import { BsChevronDown } from "react-icons/bs";
+import { useUser } from "../context/UserContext";
 
-const Header = () => {
+const Header = () => { 
+  const userContext = useUser();
+  const user = userContext?.user;
+  const logout = userContext?.logout;
+  const updatePopup = userContext?.updatePopup;
+
+  console.log("SdD",userContext?.updatePopup);
+
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showCatMenu, setShowCatMenu] = useState(false);
   const [showSortMenu, setShowSortMenu] = useState(false);
+  const [adminPage, setAdminPage] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useState(null);
+
   const router = useRouter();
+
+  useEffect(() => {
+    if (router.pathname.includes("/admin")) {
+      setAdminPage(true);
+    } else {
+      setAdminPage(false);
+    }
+  }, [router]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const user = localStorage.getItem("loggedInUser");
+      setLoggedInUser(user);
+    }
+  }, []);
 
   const handleJoinUs = () => {
     if (router.pathname === "/") {
-      // Scroll to HowYouHelp section if on the homepage
       const section = document.getElementById("how-you-can-help");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // Redirect to homepage with a query
       router.push("/?scrollTo=how-you-can-help");
     }
   };
@@ -29,7 +54,6 @@ const Header = () => {
   return (
     <div className="bg-white w-screen">
       <div className="flex pt-3 pb-1 items-center justify-between mx-6">
-        {/* Logo */}
         <Link href="/">
           <div className="flex items-center space-x-4">
             <Image
@@ -45,7 +69,6 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Navbar Menu */}
         <Menu
           showCatMenu={showCatMenu}
           setShowCatMenu={setShowCatMenu}
@@ -63,7 +86,6 @@ const Header = () => {
           />
         )}
 
-        {/* Mobile Menu Icon */}
         <div className="flex items-center gap-6 text-black">
           {mobileMenu ? (
             <VscChromeClose
@@ -83,12 +105,22 @@ const Header = () => {
           >
             Join Us
           </button>
-          <Link
-            href="/login"
-            className="hidden md:flex bg-[#22C55E] hover:bg-[#D0312D] mr-2 text-white font-bold px-8 py-2 rounded-md transition-colors duration-300"
-          >
-            Login
-          </Link>
+          <div className="hidden md:flex bg-[#22C55E] hover:bg-[#D0312D] mr-2 text-white font-bold px-8 py-2 rounded-md transition-colors duration-300">
+            {loggedInUser && adminPage && (
+              <span
+                onClick={() => updatePopup?.(true)} // Use optional chaining
+                className="cursor-pointer"
+              >
+                Logout
+              </span>
+            )}
+            {loggedInUser && !adminPage && (
+              <Link href="/admin/dashboard" className="cursor-pointer">
+                Admin Panel
+              </Link>
+            )}
+            {!loggedInUser && <Link href="/login">Login</Link>}
+          </div>
         </div>
       </div>
     </div>

@@ -7,9 +7,9 @@ const UserContext = createContext();
 
 // Provide the context to the app
 export const UserProvider = ({ children }) => {
-    const [user, setUser] = useState(null);
-    const [showPopup, setShowPopup] = useState(false); 
-    const router=useRouter()
+  const [user, setUser] = useState(null);
+  const [showPopup, setShowPopup] = useState(false); 
+  const router=useRouter()
   
     const login = (userData) => {
       setUser(userData);

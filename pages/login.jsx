@@ -62,7 +62,7 @@ const Login = () => {
           console.log("User ID:", userId);
 
           login({ userId, username, role });
-          router.push("/admin/posts");
+          router.push("/admin/dashboard");
         } else {
           const { errorType, message } = data;
 

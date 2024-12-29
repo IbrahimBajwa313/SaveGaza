@@ -4,8 +4,7 @@ import { FaCheck } from "react-icons/fa";
 import { useUser } from "../../context/UserContext";
 import { AiOutlineClose } from "react-icons/ai";
 
-export default function AddUser() {
-  // const { showPopup, updatePopup, logout } = useUser();
+export default function AddUser() { 
   const router = useRouter();
  
   const [username, setUsername] = useState("");

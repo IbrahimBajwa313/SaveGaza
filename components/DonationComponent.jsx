@@ -28,16 +28,16 @@ const UnitingPak = () => {
               Shaib Abi Talib want to make the most difference.
             </p>
             <Link
-          href="https://sgc-relief-activities-2st2.vercel.app/" // Replace with your donation site URL
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center bg-green-500 text-white text-lg font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-red-700 transition m-8 
+              href="https://sgc-relief-activities-2st2.vercel.app/" // Replace with your donation site URL
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center bg-green-500 text-white text-lg font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-red-700 transition m-8 
              sm:mx-auto sm:w-auto sm:text-base 
              md:text-lg md:px-8 
              lg:ml-16 lg:w-fit"
-        >
-          View Gaza Relief Activities
-        </Link>
+            >
+              View Gaza Relief Activities
+            </Link>
           </div>
 
           {/* Right Side - Text */}
@@ -53,7 +53,6 @@ const UnitingPak = () => {
             </div>
           </div>
         </div>
-       
       </div>
     </section>
   );
