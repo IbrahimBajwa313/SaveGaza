@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import ContactAndSubscribe from "@/components/ContactAndSubscribe";
 import Wrapper from "@/components/Wrapper";
+import About from "@/components/About";
 
 // pages/about.js
 
@@ -11,22 +12,22 @@ export default function AboutUs() {
       <Wrapper>
         {/* Main Content */}
         <main className="container mx-auto px-4 py-8 space-y-10">
-          {/* <About /> */}
+          <About />
           <section className="bg-white p-4 md:p-6 rounded-3xl shadow-md">
             <h2 className="font-extrabold text-center text-xl sm:text-2xl lg:text-3xl mb-4">
               Our Mission and Vision
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-4">
               <div className="flex justify-center md:col-span-1">
                 <Image
-                  src="/protest1.jpg"
+                  src="/dchowk2.jpg"
                   alt="About Us Image"
                   width={450}
                   height={350}
                   className="rounded-2xl object-cover max-w-full"
                 />
               </div>
-              <div className="md:col-span-1">
+              <div className="md:col-span-1 mt-8 md:pr-8">
                 <h3 className="font-extrabold text-lg sm:text-xl mb-3 text-[#22C55E]">
                   Our Mission
                 </h3>
