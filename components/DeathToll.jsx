@@ -3,15 +3,15 @@ import Chart from "./Chart";
 
 export default function DeathToll() {
   return (
-    <section className="flex flex-col lg:flex-row justify-between items-center my-8 bg-blue-50">
+    <section className="flex flex-col lg:flex-row justify-between items-center my-8">
       {/* Text section */}
       <div className="flex flex-col justify-center items-start pl-4 md:pl-8 w-full lg:w-4/12 mb-8 lg:mb-0">
         <h2 className="text-4xl md:text-6xl font-extrabold">Death Toll</h2>
         <br />
         <p className="text-base md:text-xl">
           Since 9 October 2023, Israel has been targeting Gaza, creating a total
-          death toll of{" "}
-          <span className="font-bold text-red-500">186,000+</span> so far.
+          death toll of <span className="font-bold text-red-500">186,000+</span>{" "}
+          so far.
         </p>
       </div>
 

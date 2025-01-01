@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 const Team = () => {
   const teamMembers = [
@@ -14,6 +14,12 @@ const Team = () => {
       alt: "Humaira Tayyaba",
       name: "Humaira Tayyaba",
       role: "Founder Save Gaza Campaign",
+    },
+    {
+      src: "/LeadersImages/Mushahid-Hussain-Sayed.webp",
+      alt: "Mushahid Hussain Sayed",
+      name: "Mushahid Hussain Sayed",
+      role: "Ex Member of Senate",
     },
     {
       src: "/LeadersImages/Wahaj-Ahmad.webp",
@@ -33,12 +39,7 @@ const Team = () => {
       name: "Farooq Shah Khan",
       role: "Founding Member (Law student)",
     },
-    {
-      src: "/LeadersImages/Ahmad-Maaz-Shafqat.webp",
-      alt: "Ahmad Maaz Shafqat",
-      name: "Ahmad Maaz Shafqat",
-      role: "Media Director Save Gaza Campaign",
-    },
+
     {
       src: "/LeadersImages/Tayyaba-Durrani.webp",
       alt: "Tayyaba Durrani",
@@ -51,23 +52,23 @@ const Team = () => {
       name: "Dr Sohaib Khalid",
       role: "Executive Team Member (Urologist)",
     },
-    {
-      src: "/LeadersImages/Syed-Bilal-Hamdani.webp",
-      alt: "Syed Bilal Hamdani",
-      name: "Syed Bilal Hamdani",
-      role: "Executive Team Member & IIUI Team Lead",
-    },
-    {
-      src: "/LeadersImages/Mushahid-Hussain-Sayed.webp",
-      alt: "Mushahid Hussain Sayed",
-      name: "Mushahid Hussain Sayed",
-      role: "Ex Member of Senate",
-    },
   ];
 
   const [showAll, setShowAll] = useState(false);
+  const [sliceValue, setSliceValue] = useState(4);
 
-  const displayedMembers = showAll ? teamMembers : teamMembers.slice(0, 4);
+  useEffect(() => {
+    const updateSliceValue = () => {
+      setSliceValue(window.innerWidth < 640 ? 3 : 4);
+    };
+    updateSliceValue();
+    window.addEventListener("resize", updateSliceValue);
+    return () => window.removeEventListener("resize", updateSliceValue);
+  }, []);
+
+  const displayedMembers = useMemo(() => {
+    return showAll ? teamMembers : teamMembers.slice(0, sliceValue);
+  }, [showAll, sliceValue]);
 
   return (
     <section className="p-6 md:p-10">
@@ -86,6 +87,7 @@ const Team = () => {
               width={96}
               height={96}
               className="rounded-full mx-auto mb-4 h-24 w-24 object-cover"
+              loading="lazy"
             />
             <h3 className="font-semibold text-[#22C55E]">{member.name}</h3>
             <p className="text-gray-700">{member.role}</p>
@@ -95,7 +97,8 @@ const Team = () => {
       <div className="flex justify-center mt-6">
         <button
           onClick={() => setShowAll(!showAll)}
-          className="hidden md:flex bg-[#22C55E] hover:bg-[#D0312D] text-white font-bold px-6 py-2 rounded-md transition-colors duration-300"
+          aria-expanded={showAll}
+          className="flex bg-[#22C55E] hover:bg-[#D0312D] text-white font-bold px-6 py-2 rounded-md transition-colors duration-300"
         >
           {showAll ? "Show Less" : "Show All"}
         </button>

@@ -54,7 +54,7 @@ const ContactAndSubscribe = () => {
           label="Address"
           content={
             <a
-              href=""
+              href="https://www.google.com/maps/place/Malikabad+Shopping+Mall/@33.640815,73.0750282,18.17z/data=!3m1!5s0x38dfde06df682eb3:0x17a97efdcb5a3c3a!4m10!1m2!2m1!1sSGC+Office+S%2323,+3rd+Floor,+Malikabad+Centre+near+6th+Rd,+Murree+++++++++++++++Rd,+Rawalpindi!3m6!1s0x14e3d7c028cd49d9:0x26940945443d7b5f!8m2!3d33.6402985!4d73.0757894!15sCl1TR0MgT2ZmaWNlIFMjMjMsIDNyZCBGbG9vciwgTWFsaWthYmFkIENlbnRyZSBuZWFyIDZ0aCBSZCwgTXVycmVlICAgICAgICAgICAgICAgUmQsIFJhd2FscGluZGmSAQ9zaG9wcGluZ19jZW50ZXLgAQA!16s%2Fg%2F1hm66jljv?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"

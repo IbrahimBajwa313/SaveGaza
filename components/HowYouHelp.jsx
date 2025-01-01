@@ -15,7 +15,7 @@ const HowYouCanHelp = () => {
       description: "Become part of our movement to make a difference.",
       button: {
         label: "Join Now",
-        link: "/ground-activist-form", // Replace with the form link
+        link: "/groundActivistForm", // Replace with the form link
       },
     },
     {
@@ -25,7 +25,7 @@ const HowYouCanHelp = () => {
       description: "Represent us at your university and inspire others.",
       button: {
         label: "Join Now",
-        link: "university-ambassador-form", // Replace with the form link
+        link: "/universityAmbassadorForm", // Replace with the form link
       },
     },
     {
@@ -35,7 +35,7 @@ const HowYouCanHelp = () => {
       description: "Spread awareness and support through social platforms.",
       button: {
         label: "Join Now",
-        link: "social-media-activist-form", // Replace with the form link
+        link: "/socialMediaActivistForm", // Replace with the form link
       },
     },
     {
@@ -45,7 +45,8 @@ const HowYouCanHelp = () => {
       description: "Your contribution can bring meaningful change.",
       button: {
         label: "Donate Now",
-        link: "", // Replace with your donation module link
+        link: "https://sgc-relief-activities-2st2.vercel.app/", // Replace with your donation module link
+        target: "_blank",
       },
     },
   ];

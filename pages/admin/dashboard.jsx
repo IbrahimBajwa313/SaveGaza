@@ -1,171 +1,222 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 
-export default function ParticipantsList() {
-  const [participants, setParticipants] = useState({
-    ground: [],
-    university: [],
-    social: [],
-  });
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [currentPage, setCurrentPage] = useState({
-    ground: 1,
-    university: 1,
-    social: 1,
-  });
-  const itemsPerPage = 5;
+const Dashboard = () => {
+  const [groundActivists, setGroundActivists] = useState([]);
+  const [universityAmbassadors, setUniversityAmbassadors] = useState([]);
+  const [socialMediaActivists, setSocialMediaActivists] = useState([]);
 
-  const fetchParticipantsByCategory = async (category) => {
-    try {
-      // Request the category participants from the API
-      const response = await axios.get("/api/joinAPI", {
-        params: { category }, // Pass category as query parameter
-      });
-      return response.data.data; // Ensure the API returns an object with 'data' containing the participants
-    } catch (err) {
-      throw new Error(`Failed to fetch ${category} participants.`);
-    }
-  };
+  const [showMoreGround, setShowMoreGround] = useState(false);
+  const [showMoreUniversity, setShowMoreUniversity] = useState(false);
+  const [showMoreSocialMedia, setShowMoreSocialMedia] = useState(false);
 
   useEffect(() => {
-    const fetchAllParticipants = async () => {
-      try {
-        const ground = await fetchParticipantsByCategory("ground");
-        const university = await fetchParticipantsByCategory("university");
-        const social = await fetchParticipantsByCategory("social");
+    const fetchData = async () => {
+      const groundResponse = await fetch("/api/groundActivist");
+      const universityResponse = await fetch("/api/universityAmbassador");
+      const socialMediaResponse = await fetch("/api/socialMediaActivist");
 
-        setParticipants({ ground, university, social }); // Update state with fetched data
-      } catch (err) {
-        setError(err.message); // Set error if fetching fails
-      } finally {
-        setLoading(false); // Stop loading
-      }
+      const groundData = await groundResponse.json();
+      const universityData = await universityResponse.json();
+      const socialMediaData = await socialMediaResponse.json();
+
+      setGroundActivists(groundData);
+      setUniversityAmbassadors(universityData);
+      setSocialMediaActivists(socialMediaData);
     };
 
-    fetchAllParticipants(); // Fetch participants on component mount
+    fetchData();
   }, []);
 
-  const handlePageChange = (category, page) =>
-    setCurrentPage((prev) => ({ ...prev, [category]: page }));
+  const toggleShowMoreGround = () => setShowMoreGround(!showMoreGround);
+  const toggleShowMoreUniversity = () =>
+    setShowMoreUniversity(!showMoreUniversity);
+  const toggleShowMoreSocialMedia = () =>
+    setShowMoreSocialMedia(!showMoreSocialMedia);
 
-  const filteredParticipants = (category) =>
-    participants[category]
-      .filter(
-        (p) =>
-          p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          p.university?.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      .slice(
-        (currentPage[category] - 1) * itemsPerPage,
-        currentPage[category] * itemsPerPage
-      );
-
-  const categories = [
-    { name: "Ground Activist", key: "ground" },
-    { name: "University Ambassador", key: "university" },
-    { name: "Social Media Activist", key: "social" },
-  ];
+  const displayedGroundActivists = showMoreGround
+    ? groundActivists
+    : groundActivists.slice(0, 2);
+  const displayedUniversityAmbassadors = showMoreUniversity
+    ? universityAmbassadors
+    : universityAmbassadors.slice(0, 2);
+  const displayedSocialMediaActivists = showMoreSocialMedia
+    ? socialMediaActivists
+    : socialMediaActivists.slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 sm:p-8">
-      <h1 className="text-2xl sm:text-4xl font-extrabold text-center text-black mb-6">
-        Campaign Participants by{" "}
-        <span className="text-[#22C55E]">Category</span>
-      </h1>
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <h2 className="text-6xl font-extrabold mb-16 text-center text-black">
+        Dashboard
+      </h2>
 
-      {/* Search Bar */}
-      <div className="max-w-3xl mx-auto mb-6">
-        <input
-          type="text"
-          placeholder="Search by name or university"
-          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+      {/* Styled Scrollbar CSS */}
+      <style jsx>{`
+        .scrollbar::-webkit-scrollbar {
+          height: 10px;
+        }
+        .scrollbar::-webkit-scrollbar-track {
+          background: #f3f4f6;
+        }
+        .scrollbar::-webkit-scrollbar-thumb {
+          background: #22c55e;
+          border-radius: 8px;
+        }
+        .scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #d0312d;
+        }
+      `}</style>
+
+      {/* Ground Activists Section */}
+      <div className="mb-16">
+        <h3 className="text-3xl font-extrabold text-center text-black mb-2">
+          Ground <span className="text-[#D0312D]">Activists</span>
+        </h3>
+        <div className="overflow-x-auto scrollbar">
+          <table className="min-w-full border bg-white rounded-lg shadow-md">
+            <thead>
+              <tr className="bg-[#22C55E] text-white">
+                <th className="border px-4 py-2">Name</th>
+                <th className="border px-4 py-2">Email</th>
+                <th className="border px-4 py-2">City</th>
+                <th className="border px-4 py-2">Phone</th>
+                <th className="border px-4 py-2">Age</th>
+                <th className="border px-4 py-2">Profession</th>
+                <th className="border px-4 py-2">Institute</th>
+              </tr>
+            </thead>
+            <tbody>
+              {displayedGroundActivists.map((activist, index) => (
+                <tr key={index} className="border-b">
+                  <td className="border px-4 py-2">{activist.name}</td>
+                  <td className="border px-4 py-2">{activist.email}</td>
+                  <td className="border px-4 py-2">{activist.city}</td>
+                  <td className="border px-4 py-2">{activist.phone}</td>
+                  <td className="border px-4 py-2">{activist.age}</td>
+                  <td className="border px-4 py-2">{activist.profession}</td>
+                  <td className="border px-4 py-2">{activist.institute}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {groundActivists.length > 2 && (
+          <div className="flex justify-end mt-2">
+            <button
+              onClick={toggleShowMoreGround}
+              className="px-4 py-2 bg-[#22C55E] text-white rounded-lg hover:bg-[#D0312D] transition duration-300"
+            >
+              {showMoreGround ? "Show Less" : "Show All"}
+            </button>
+          </div>
+        )}
       </div>
 
-      {error && <p className="text-red-500 text-center">{error}</p>}
-      {loading ? (
-        <p className="text-center text-gray-500">Loading...</p>
-      ) : (
-        categories.map(({ name, key }) => (
-          <section
-            key={key}
-            className="max-w-6xl mx-auto mb-8 p-4 bg-white rounded-lg shadow-md"
-          >
-            <h2 className="text-xl font-bold text-green-600 mb-4">{name}</h2>
-            <div className="overflow-x-auto">
-              <table className="min-w-full table-auto">
-                <thead>
-                  <tr className="bg-[#22C55E] text-white">
-                    <th className="px-4 py-2">Name</th>
-                    <th className="px-4 py-2">Email</th>
-                    <th className="px-4 py-2">Phone</th>
-                    <th className="px-4 py-2">University</th>
-                    <th className="px-4 py-2">Skills</th>
-                    <th className="px-4 py-2">Profession</th>
-                    <th className="px-4 py-2">City</th>
-                    <th className="px-4 py-2">Age</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredParticipants(key).length === 0 ? (
-                    <tr>
-                      <td colSpan="8" className="text-center py-4">
-                        No participants found for {name}.
-                      </td>
-                    </tr>
-                  ) : (
-                    filteredParticipants(key).map((participant) => (
-                      <tr key={participant._id} className="border-b">
-                        <td className="px-4 py-2">{participant.name}</td>
-                        <td className="px-4 py-2">
-                          {participant.email || "N/A"}
-                        </td>
-                        <td className="px-4 py-2">
-                          {participant.mobile || "N/A"}
-                        </td>
-                        <td className="px-4 py-2">
-                          {participant.university || "N/A"}
-                        </td>
-                        <td className="px-4 py-2">{participant.skills}</td>
-                        <td className="px-4 py-2">{participant.profession}</td>
-                        <td className="px-4 py-2">{participant.city}</td>
-                        <td className="px-4 py-2">{participant.age}</td>
-                      </tr>
-                    ))
-                  )}
-                </tbody>
-              </table>
-            </div>
+      {/* University Ambassadors Section */}
+      <div className="mb-16">
+        <h3 className="text-3xl font-extrabold text-center text-black mb-2">
+          University <span className="text-[#D0312D]">Ambassadors</span>
+        </h3>
+        <div className="overflow-x-auto scrollbar">
+          <table className="min-w-full border bg-white rounded-lg shadow-md">
+            <thead>
+              <tr className="bg-[#22C55E] text-white">
+                <th className="border px-4 py-2">Name</th>
+                <th className="border px-4 py-2">Email</th>
+                <th className="border px-4 py-2">Phone</th>
+                <th className="border px-4 py-2">University Name</th>
+                <th className="border px-4 py-2">City</th>
+                <th className="border px-4 py-2">Profession</th>
+                <th className="border px-4 py-2">Skills</th>
+                <th className="border px-4 py-2">Additional Contribution</th>
+              </tr>
+            </thead>
+            <tbody>
+              {displayedUniversityAmbassadors.map((ambassador, index) => (
+                <tr key={index} className="border-b">
+                  <td className="border px-4 py-2">{ambassador.name}</td>
+                  <td className="border px-4 py-2">{ambassador.email}</td>
+                  <td className="border px-4 py-2">{ambassador.phone}</td>
+                  <td className="border px-4 py-2">
+                    {ambassador.universityName}
+                  </td>
+                  <td className="border px-4 py-2">{ambassador.city}</td>
+                  <td className="border px-4 py-2">{ambassador.profession}</td>
+                  <td className="border px-4 py-2">{ambassador.skills}</td>
+                  <td className="border px-4 py-2">
+                    {ambassador.contribution}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-            {/* Pagination */}
-            {filteredParticipants(key).length > 0 && (
-              <div className="flex justify-end mt-4">
-                <button
-                  disabled={currentPage[key] === 1}
-                  onClick={() => handlePageChange(key, currentPage[key] - 1)}
-                  className="px-3 py-1 bg-gray-200 rounded-md mr-2 disabled:opacity-50"
-                >
-                  Previous
-                </button>
-                <button
-                  disabled={
-                    currentPage[key] >=
-                    Math.ceil(participants[key].length / itemsPerPage)
-                  }
-                  onClick={() => handlePageChange(key, currentPage[key] + 1)}
-                  className="px-3 py-1 bg-gray-200 rounded-md disabled:opacity-50"
-                >
-                  Next
-                </button>
-              </div>
-            )}
-          </section>
-        ))
-      )}
+        {universityAmbassadors.length > 2 && (
+          <div className="flex justify-end mt-2">
+            <button
+              onClick={toggleShowMoreUniversity}
+              className="px-4 py-2 bg-[#22C55E] text-white rounded-lg hover:bg-[#D0312D] transition duration-300"
+            >
+              {showMoreUniversity ? "Show Less" : "Show All"}
+            </button>
+          </div>
+        )}
+      </div>
+
+      {/* Social Media Activists Section */}
+      <div className="mb-16">
+        <h3 className="text-3xl font-extrabold text-center text-black mb-2">
+          Social <span className="text-[#22C55E]">Media</span>{" "}
+          <span className="text-[#D0312D]">Activists</span>
+        </h3>
+        <div className="overflow-x-auto scrollbar">
+          <table className="min-w-full border bg-white rounded-lg shadow-md">
+            <thead>
+              <tr className="bg-[#22C55E] text-white">
+                <th className="border px-4 py-2">Name</th>
+                <th className="border px-4 py-2">Email</th>
+                <th className="border px-4 py-2">Phone</th>
+                <th className="border px-4 py-2">City</th>
+                <th className="border px-4 py-2">Platforms</th>
+                <th className="border px-4 py-2">Skills</th>
+                <th className="border px-4 py-2">Thoughts</th>
+                <th className="border px-4 py-2">Pledge</th>
+              </tr>
+            </thead>
+            <tbody>
+              {displayedSocialMediaActivists.map((activist, index) => (
+                <tr key={index} className="border-b">
+                  <td className="border px-4 py-2">{activist.name}</td>
+                  <td className="border px-4 py-2">{activist.email}</td>
+                  <td className="border px-4 py-2">{activist.phone}</td>
+                  <td className="border px-4 py-2">{activist.city}</td>
+                  <td className="border px-4 py-2">
+                    {activist.platforms.join(", ")}
+                  </td>
+                  <td className="border px-4 py-2">
+                    {activist.skills.join(", ")}
+                  </td>
+                  <td className="border px-4 py-2">{activist.thoughts}</td>
+                  <td className="border px-4 py-2">{activist.pledge}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {socialMediaActivists.length > 2 && (
+          <div className="flex justify-end mt-2">
+            <button
+              onClick={toggleShowMoreSocialMedia}
+              className="px-4 py-2 bg-[#22C55E] text-white rounded-lg hover:bg-[#D0312D] transition duration-300"
+            >
+              {showMoreSocialMedia ? "Show Less" : "Show All"}
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
-}
+};
+
+export default Dashboard;

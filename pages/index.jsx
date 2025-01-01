@@ -13,7 +13,7 @@ import "./fontawesome";
 import UnitingPak from "@/components/UnitingPak";
 import ContactAndSubscribe from "@/components/ContactAndSubscribe";
 import Video from "@/components/Video";
-import Chatbot from "@/components/Chatbot";
+import DonationComponent from "@/components/DonationComponent";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -37,6 +37,7 @@ export default function Home() {
         <About />
         {/* <Chatbot /> */}
         <DeathToll />
+        <DonationComponent />
         <section id="how-you-can-help">
           <HowYouHelp />
         </section>
