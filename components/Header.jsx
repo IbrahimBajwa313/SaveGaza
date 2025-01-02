@@ -34,7 +34,7 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <Image
               src="/save-gaza-logo.png"
-              alt="Save Gaza Campaign Logo"
+              alt="SGC Logo"
               className="h-12 w-12"
               height={48}
               width={48}
