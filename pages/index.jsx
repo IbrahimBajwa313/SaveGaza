@@ -13,7 +13,7 @@ import "./fontawesome";
 import UnitingPak from "@/components/UnitingPak";
 import ContactAndSubscribe from "@/components/ContactAndSubscribe";
 import Video from "@/components/Video";
-import DonationComponent from "@/components/DonationComponent";
+import DonationComponent from "@/components/DonationComponent"; 
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -46,7 +46,7 @@ export default function Home() {
         <FAQs />
         <ContactAndSubscribe />
         <Reviews />
-        <Team />
+        <Team /> 
       </Wrapper>
     </main>
   );
