@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
   const [subTotal, setSubTotal] = useState(0);
 
   const router = useRouter();
- 
+
   // Initialize state and redirect logic
   useEffect(() => {
     const initializeApp = async () => {
@@ -98,7 +98,7 @@ export default function App({ Component, pageProps }) {
       />
 
       <script
-        src="//code.tidio.co/oa2rdanrhvguvw5ffgz012it3mptpgxn.js"
+        src="//code.tidio.co/cqmomt4gjw6vhhuoyh0141jgo0g1eoms.js"
         async
       ></script>
     </>
