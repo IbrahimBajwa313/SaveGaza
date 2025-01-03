@@ -15,16 +15,19 @@ export default function About() {
         </h2>
         <p className="text-lg pt-4">
           <span className="font-bold text-[#22C55E]">Save Gaza Campaign </span>
-          is a movement of hope and resilience, uniting voices for justice and
-          compassion. Since our inception in November 2023, we strive to uplift
-          the oppressed and foster solidarity among communities, ensuring that
-          every individual feels valued and heard.
+          is a beacon of hope for the people of Gaza, dedicated to amplifying
+          their voices and standing in solidarity with their struggles. Since
+          our inception in November 2023, we have tirelessly worked to uplift
+          the oppressed, focusing on providing relief and support directly on
+          the ground in Gaza. Through our efforts, we aim to bring compassion,
+          justice, and tangible change to Gazans.
         </p>
+
         <br />
         {/* Using Link for internal navigation */}
-        <Link href="/about">
+        <Link href="https://sgc-relief-activities-2st2.vercel.app/">
           <button className="w-full p-3 bg-[#22C55E] text-white rounded-full font-bold text-lg lg:text-2xl transition duration-300 ease-in-out hover:bg-[#D0312D] hover:text-white">
-            Know More About Us{" "}
+            Donate for Gazans {" "}
             <FontAwesomeIcon className="pl-4" icon={faArrowUpRightFromSquare} />
           </button>
         </Link>
@@ -42,7 +45,7 @@ export default function About() {
         >
           <div>
             <Image
-              src="/protest4.jpg"
+              src="/aboutCarousel/protest4.jpg"
               alt="Slide 4"
               width={620}
               height={384}
@@ -51,7 +54,7 @@ export default function About() {
           </div>
           <div>
             <Image
-              src="/protest1.jpg"
+              src="/aboutCarousel/gazaRelief.jpg"
               alt="Slide 1"
               width={620}
               height={384}
@@ -60,7 +63,7 @@ export default function About() {
           </div>
           <div>
             <Image
-              src="/protest2.png"
+              src="/aboutCarousel/protest2.png"
               alt="Slide 2"
               width={620}
               height={384}
@@ -69,7 +72,7 @@ export default function About() {
           </div>
           <div>
             <Image
-              src="/protest3.jpg"
+              src="/aboutCarousel/protest3.jpg"
               alt="Slide 3"
               width={620}
               height={384}

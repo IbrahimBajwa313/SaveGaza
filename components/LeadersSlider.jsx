@@ -48,11 +48,11 @@ const LeadersSlider = () => {
       title: "Executive Team Member (Urologist)",
       image: "/LeadersImages/Dr-Sohaib-Khalid.webp",
     },
-    {
-      name: "Syed Bilal Hamdani",
-      title: "Executive Team Member & IIUI Team Lead",
-      image: "/LeadersImages/Syed-Bilal-Hamdani.webp",
-    },
+    // {
+    //   name: "Syed Bilal Hamdani",
+    //   title: "Executive Team Member & IIUI Team Lead",
+    //   image: "/LeadersImages/Syed-Bilal-Hamdani.webp",
+    // },
     {
       name: "Mushahid Hussain",
       title: "Ex-Member Of Senate",

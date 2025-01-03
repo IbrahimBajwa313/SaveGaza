@@ -54,13 +54,12 @@ const Login = () => {
           const { username, role, userId } = data.data;
 
           // Store session data in cookies for 1 day
-          Cookies.set("userSession", JSON.stringify({ username, role, userId }), { expires: 1 });
-
-          console.log("Login successful");
-          console.log("Username:", username);
-          console.log("Role:", role);
-          console.log("User ID:", userId);
-
+          Cookies.set("userSession", JSON.stringify({ username, role, userId }), { 
+            expires: 1, 
+            secure: true, 
+            sameSite: "Strict" 
+        });
+        
           login({ userId, username, role });
           router.push("/admin/dashboard");
         } else {

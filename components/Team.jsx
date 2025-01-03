@@ -4,50 +4,50 @@ import { useState, useEffect, useMemo } from "react";
 const Team = () => {
   const teamMembers = [
     {
-      src: "/LeadersImages/Mushtaq-khan.webp",
+      src: "/LeadersImg/Mushtaq-khan.webp",
       alt: "Mushtaq Khan",
       name: "Mushtaq Khan",
       role: "Ex Member of Senate",
     },
     {
-      src: "/LeadersImages/Humaira-Tayyaba.webp",
+      src: "/LeadersImg/Humaira-Tayyaba.webp",
       alt: "Humaira Tayyaba",
       name: "Humaira Tayyaba",
       role: "Founder Save Gaza Campaign",
     },
     {
-      src: "/LeadersImages/Mushahid-Hussain-Sayed.webp",
+      src: "/LeadersImg/Mushahid-Hussain-Sayed.webp",
       alt: "Mushahid Hussain Sayed",
       name: "Mushahid Hussain Sayed",
       role: "Ex Member of Senate",
     },
     {
-      src: "/LeadersImages/Wahaj-Ahmad.webp",
+      src: "/LeadersImg/Wahaj-Ahmad.webp",
       alt: "Wahaj Ahmad",
       name: "Wahaj Ahmad",
       role: "Founding Member",
     },
     {
-      src: "/LeadersImages/Mahera-Sajid.webp",
+      src: "/LeadersImg/Mahera-Sajid.webp",
       alt: "Mahera Sajid",
       name: "Mahera Sajid",
       role: "Founding Member (IT Professional)",
     },
     {
-      src: "/LeadersImages/Farooq-Shah-Khan.webp",
+      src: "/LeadersImg/Farooq-Shah-Khan.webp",
       alt: "Farooq Shah Khan",
       name: "Farooq Shah Khan",
       role: "Founding Member (Law student)",
     },
 
     {
-      src: "/LeadersImages/Tayyaba-Durrani.webp",
+      src: "/LeadersImg/Tayyaba-Durrani.webp",
       alt: "Tayyaba Durrani",
       name: "Tayyaba Durrani",
       role: "Executive Team Member",
     },
     {
-      src: "/LeadersImages/Dr-Sohaib-Khalid.webp",
+      src: "/LeadersImg/Dr-Sohaib-Khalid.webp",
       alt: "Dr Sohaib Khalid",
       name: "Dr Sohaib Khalid",
       role: "Executive Team Member (Urologist)",

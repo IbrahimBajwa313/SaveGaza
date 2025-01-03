@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import ContactAndSubscribe from "@/components/ContactAndSubscribe";
 import Wrapper from "@/components/Wrapper";
-import About from "@/components/About";
+import About from "@/components/About"; 
 
 // pages/about.js
 

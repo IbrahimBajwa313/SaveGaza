@@ -5,19 +5,23 @@ import Link from "next/link";
 import "@/styles/globals.css";
 import Head from "next/head";
 import { UserProvider } from "../context/UserContext";
-import { useState, useEffect, createContext, useContext } from "react";
-import { useRouter } from "next/router";
+import {
+  useState,
+  useEffect,
+  createContext,
+  useContext,
+} from "react";
 import Headroom from "react-headroom";
 import Loader from "@/components/Loader";
 
+// Context API to use functions globally
 export const productInfo = createContext();
 
-// using Context api to use functions in other files
 export function MyContext() {
   return useContext(productInfo);
 }
 
-/// App Component
+// Main App Component
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
   const [adminPage, setAdminPage] = useState(false);
@@ -76,7 +80,6 @@ export default function App({ Component, pageProps }) {
       </Head>
 
       <Headroom>
-        {/* <Header /> */}
         <Header />
       </Headroom>
 
