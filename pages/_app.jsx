@@ -6,6 +6,7 @@ import "@/styles/globals.css";
 import Head from "next/head";
 import { useRouter } from 'next/router';
 import { UserProvider } from "../context/UserContext";
+import { Analytics } from "@vercel/analytics/react"
 import {
   useState,
   useEffect,
@@ -86,6 +87,7 @@ export default function App({ Component, pageProps }) {
 
       <UserProvider>
         <Component {...pageProps} />
+        <Analytics /> {/* Place Analytics here */}
       </UserProvider>
 
       <Footer2 />
