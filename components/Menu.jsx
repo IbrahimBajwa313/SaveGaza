@@ -5,7 +5,7 @@ import { BsChevronDown } from 'react-icons/bs';
 const data = [
     { id: 1, name: 'About', url: '/about' },
     { id: 2, name: 'SGC Shop', url: '/pageUnderCons' },
-    { id: 3, name: 'SGC News', url: '/pageUnderCons' },
+    { id: 3, name: 'SGC News', url: 'https://sgc-blogs-4ryc.vercel.app/' },
     { id: 4, name: 'SGC Relief Activities', url: 'https://sgc-relief-activities-2st2.vercel.app/' }, 
     { id: 5, name: 'Contact Us', url: '/contact' }, 
 ];
@@ -21,7 +21,7 @@ const Menu = ({ showCatMenu, setShowCatMenu, showSortMenu, setShowSortMenu }) =>
                                 className='cursor-pointer z-40 gap-2 flex text-center relative border border-transparent rounded-md hover:shaodow-lg px-4 py-2'
                                 onMouseEnter={() => {
                                     setShowCatMenu(true);
-                                    setShowSortMenu(false); // Close sort menu
+                                    setShowSortMenu(false);  
                                 }}
                                 onMouseLeave={() => {
                                     setShowCatMenu(false);

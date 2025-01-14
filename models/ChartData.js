@@ -8,7 +8,8 @@ const ChartDataSchema = new mongoose.Schema({
   PeopleDisplaced: { type: Number, required: true },
   HousingUnitsDestroyed: { type: Number, required: true },
   RefugeesNeedingFoodAssistance: { type: Number, required: true },
-  createdAt: { type: Date, default: Date.now }, // Optional timestamp field
-}, { collection: 'chartsdata' }); // Specify the collection name here
+  createdAt: { type: Date, default: Date.now }, // Timestamp for creation
+  updatedAt: { type: Date, default: Date.now }, // Timestamp for updates
+}, { collection: "chartData" }); // Consistent collection name
 
 module.exports = mongoose.models.ChartData || mongoose.model("ChartData", ChartDataSchema);

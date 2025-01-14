@@ -84,7 +84,7 @@ export default function Users() {
 
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
-          <thead className="bg-gray-700 text-white">
+          <thead className="bg-green-600 text-white">
             <tr>
               <th className="py-3 px-4 text-left font-semibold">Index</th> 
               <th className="py-3 px-4 text-left font-semibold">Username</th>
