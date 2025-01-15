@@ -3,11 +3,11 @@ import React from 'react';
 import { BsChevronDown } from 'react-icons/bs';
 
 const data = [
-    { id: 1, name: 'About', url: '/about' },
-    { id: 2, name: 'SGC Shop', url: '/pageUnderCons' },
-    { id: 3, name: 'SGC News', url: 'https://sgc-blogs-4ryc.vercel.app/' },
-    { id: 4, name: 'SGC Relief Activities', url: 'https://sgc-relief-activities-2st2.vercel.app/' }, 
-    { id: 5, name: 'Contact Us', url: '/contact' }, 
+    { id: 1, name: 'Home', url: '/' },
+    { id: 2, name: 'About Us', url: '/about' },
+    { id: 3, name: 'Activities and Updates', url: 'https://sgc-blogs-4ryc.vercel.app/' },
+    { id: 4, name: 'Palestine Blogs', url: 'https://sgc-relief-activities-2st2.vercel.app/' }, 
+    // { id: 5, name: 'Contact Us', url: '/contact' }, 
 ];
 
 const Menu = ({ showCatMenu, setShowCatMenu, showSortMenu, setShowSortMenu }) => {

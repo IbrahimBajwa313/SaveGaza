@@ -63,7 +63,7 @@ export default function AboutUs() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="flex justify-center md:col-span-1 w-full">
                 <Image
-                  src="/LeadersImages/Humaira-Tayyaba.webp"
+                  src="/LeadersImg/Humaira-Tayyaba.webp"
                   alt="Humaira Tayyaba"
                   width={350}
                   height={250}
@@ -112,7 +112,7 @@ export default function AboutUs() {
             <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 px-4">
               <div className="bg-white shadow-lg rounded-3xl overflow-hidden">
                 <Image
-                  src="/protest2.png"
+                  src="/protest.jpg"
                   alt="42 Days Protest"
                   width={600}
                   height={400}

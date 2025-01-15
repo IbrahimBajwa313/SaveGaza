@@ -102,11 +102,11 @@ const Header = () => {
 
           <button
             onClick={handleJoinUs}
-            className="hidden md:flex bg-[#22C55E] hover:bg-[#D0312D] text-white font-bold px-6 py-2 rounded-md transition-colors duration-300"
+            className="hidden md:flex bg-[#D0312D] mx-10 ml-15 hover:bg-[#22C55E] text-white font-bold px-8 py-2 rounded-md transition-colors duration-300"
           >
             Join Us
           </button>
-          <div className="hidden md:flex bg-[#22C55E] hover:bg-[#D0312D] mr-2 text-white font-bold px-8 py-2 rounded-md transition-colors duration-300">
+          {/* <div className="hidden md:flex bg-[#22C55E] hover:bg-[#D0312D] mr-2 text-white font-bold px-8 py-2 rounded-md transition-colors duration-300">
             {loggedInUser && adminPage && (
               <span
                 onClick={() => updatePopup?.(true)} // Use optional chaining
@@ -121,7 +121,7 @@ const Header = () => {
               </Link>
             )}
             {!loggedInUser && <Link href="/login">Login</Link>}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
