@@ -58,7 +58,7 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <Image
               // src="/save-gaza-logo.png"
-              src="/save_gaza_campaign_logo.jpeg"
+              src="/save-gaza-logo.png"
               alt="SGC Logo"
               className="h-14 w-14"
               height={48}
@@ -100,28 +100,12 @@ const Header = () => {
             />
           )}
 
-          <button
-            onClick={handleJoinUs}
-            className="hidden md:flex bg-[#D0312D] mx-10 ml-15 hover:bg-[#22C55E] text-white font-bold px-8 py-2 rounded-md transition-colors duration-300"
+          <Link
+            href="/join"
+            className="hidden md:flex bg-[#D0312D] mx-8 ml-15 hover:bg-[#22C55E] text-white font-bold px-8 py-2 rounded-md transition-colors duration-300"
           >
             Join Us
-          </button>
-          {/* <div className="hidden md:flex bg-[#22C55E] hover:bg-[#D0312D] mr-2 text-white font-bold px-8 py-2 rounded-md transition-colors duration-300">
-            {loggedInUser && adminPage && (
-              <span
-                onClick={() => updatePopup?.(true)} // Use optional chaining
-                className="cursor-pointer"
-              >
-                Logout
-              </span>
-            )}
-            {loggedInUser && !adminPage && (
-              <Link href="/admin/dashboard" className="cursor-pointer">
-                Admin Panel
-              </Link>
-            )}
-            {!loggedInUser && <Link href="/login">Login</Link>}
-          </div> */}
+          </Link> 
         </div>
       </div>
     </div>

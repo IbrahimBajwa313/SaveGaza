@@ -34,18 +34,18 @@ export default function Home() {
     <main className="overflow-x-hidden w-screen z-20">
       <HeroBanner />
       <Wrapper className="bg-blue-50 pt-20">
-        <About />
+         <HowYouHelp />
+        {/* <About /> */}
         {/* <Chatbot /> */}
-        <DeathToll />
-        <DonationComponent />
-        <section id="how-you-can-help">
-          <HowYouHelp />
-        </section>
+        {/* <DeathToll /> */}
+        {/* <DonationComponent /> */}
+        {/* <section id="how-you-can-help">
+        </section> */}
         <UnitingPak />
         <Video />
         <FAQs />
-        <ContactAndSubscribe />
-        <Reviews />
+        {/* <ContactAndSubscribe /> */}
+        {/* <Reviews /> */}
         <Team /> 
       </Wrapper>
     </main>

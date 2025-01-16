@@ -1,57 +1,60 @@
-import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import Wrapper from "./Wrapper";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const HeroBanner = () => {
+  const phoneNumber = "+923325000418";
+  const message = "AsslamoAlikum! I am contacting you through SGC Site. I want to collaborate in Gaza Relief Activities. Please send the details and the account number.";
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  
+  const bannerRef = useRef(null);
+
+  useEffect(() => {
+    const element = bannerRef.current;
+    let scrollPosition = 0;
+
+    const scrollBanner = () => {
+      if (element) {
+        scrollPosition += 1;
+        if (scrollPosition >= element.scrollHeight) {
+          scrollPosition = 0;
+        }
+        element.scrollTo({ top: scrollPosition, behavior: "smooth" });
+      }
+    };
+
+    const interval = setInterval(scrollBanner, 50); // Adjust speed with the interval delay
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
   return (
-    <div className=" w-screen mt-2  ">
-      <Wrapper>
-        <Carousel
-          autoPlay={true}
-          infiniteLoop={true}
-          showStatus={false}
-          showThumbs={false}
-        >
-          <div>
-            <Image
-              src="/heroSlides/1.png"
-              alt="Hero Slide 1"
-              className="rounded-md"
-              width={800} // Specify the width
-              height={600} // Specify the height
-              priority // Ensures this image loads eagerly
-            />
-            <div className="px-[15px] md:px-[40px] py-[3px] md:py-[25px] font-oswald bg-white absolute bottom-[20px] md:bottom-[75px] right-0 text-black/[0.5] text-[15px] rounded-l-sm md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
-              Join Now
-            </div>
+    <div
+      ref={bannerRef}
+      className="relative h-[90vh] bg-cover bg-center poppins overflow-hidden no-scrollbar"
+      style={{
+        backgroundImage: "url('/banner1.png')",
+        backgroundPosition: "center top",
+        overflow: "hidden",
+      }}
+    >
+      <div className="absolute inset-0 bg-black overflow-hidden bg-opacity-70"></div>
+      <div className="relative flex flex-col items-center md:items-start justify-center h-full text-white px-6 md:px-24">
+        <div className="max-w-lg text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            <span className="block text-5xl md:text-5xl">Save Gaza Campaign</span>
+          </h1>
+          <p className="text-white text-base md:text-lg mb-6 leading-relaxed">
+            Save Gaz@ Campaign is a civil society movement by the people of Pakistan in support of the people of Palestine. It is especially aimed at pressuring the government of Pakistan to take actions for an immediate ceasefire and relief for Gaz@.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <Link href="/join">
+                <button className="text-lg md:text-2xl font-bold bg-white text-black px-10 md:px-16 py-3 md:py-4 rounded-full shadow-lg hover:bg-[#D0312D] hover:text-white transition-all ease-in-out duration-200">
+                  Join Now
+                </button> 
+            </Link> 
           </div>
-          <div>
-            <Image
-              src="/heroSlides/2.jpg"
-              alt="Hero Slide 1"
-              className="rounded-md"
-              width={800} // Specify the width
-              height={600} // Specify the height
-              priority // Ensures this image loads eagerly
-            />
-          </div>
-          <div>
-            <Image
-              src="/heroSlides/3.jpg"
-              alt="Hero Slide 1"
-              className="rounded-md"
-              width={800} // Specify the width
-              height={600} // Specify the height
-              priority // Ensures this image loads eagerly
-            />{" "}
-            <div className="px-[15px] md:px-[40px] py-[3px] md:py-[25px] font-oswald bg-white absolute bottom-[20px] md:bottom-[75px] left-0 text-black/[0.5] text-[15px] rounded-r-sm md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90">
-              Donate Now
-            </div>
-          </div>
-        </Carousel>
-      </Wrapper>
+        </div>
+      </div>
     </div>
   );
 };

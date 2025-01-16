@@ -68,7 +68,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Link
         href="https://wa.me/923325900041" // Replace with the actual WhatsApp number
-        className="fixed bottom-16 left-8  z-[9999] rounded-full bg-white/[0.25] text-green-500 duration-200 hover:scale-110 cursor-pointer"
+        className="fixed bottom-8 right-8  z-[9999] rounded-full bg-white/[0.25] text-green-500 duration-200 hover:scale-110 cursor-pointer"
         target="_blank"
         rel="noopener noreferrer"
         style={{ zIndex: 9999 }}
