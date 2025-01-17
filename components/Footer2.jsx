@@ -8,36 +8,6 @@ const Footer = () => {
     <footer className="bg-[#111] text-white py-12">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 gap-y-10 pb-12 border-b border-gray-700 px-4 lg:px-12">
         {/* Contact Info */}
-        <div className="flex items-start">
-          <i className="fa-solid fa-location-dot text-2xl lg:text-3xl text-[#206e3d] mr-4"></i>
-          <div>
-            <a
-              href="https://maps.app.goo.gl/3XPDYJXN1Bn9kXQn8"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <h3 className="text-[#2b9150] font-bold mb-3">Find us</h3>
-              <p className="text-gray-400">
-                SGC Office S#23, 3rd Floor, Malikabad Centre near 6th Rd, Murree
-                Rd, Rawalpindi
-              </p>
-            </a>
-          </div>
-        </div>
-        <div className="flex items-start">
-          <i className="fa-solid fa-phone text-2xl lg:text-3xl text-[#2b9150] mr-4"></i>
-          <div>
-            <h3 className="text-[#2b9150] font-bold mb-3">Call us</h3>
-            <p className="text-gray-400">+92 332 5900041</p>
-          </div>
-        </div>
-        <div className="flex items-start">
-          <i className="fa-solid fa-envelope-open text-2xl lg:text-3xl text-[#2b9150] mr-4"></i>
-          <div>
-            <h3 className="text-[#2b9150] font-bold mb-3">Mail us</h3>
-            <p className="text-gray-400">tameer2k23@gmail.com</p>
-          </div>
-        </div>
 
         {/* Logo and Social Links */}
         <div className="lg:col-span-1">
@@ -100,12 +70,12 @@ const Footer = () => {
               </li>
               <li className="mb-2">
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Services
+                  About Us
                 </Link>
               </li>
               <li className="mb-2">
                 <Link href="#" className="text-gray-400 hover:text-white">
-                  Contact
+                  Mission and Vission
                 </Link>
               </li>
               <li className="mb-2">
@@ -117,7 +87,7 @@ const Footer = () => {
             <ul>
               <li className="mb-2">
                 <Link href="/about" className="text-gray-400 hover:text-white">
-                  About Us
+                  Gaza Relief Activities
                 </Link>
               </li>
               <li className="mb-2">
@@ -140,22 +110,38 @@ const Footer = () => {
         </div>
 
         {/* Subscribe Section */}
-        <div>
-          <h3 className="text-[#2b9150] font-bold mb-3">Subscribe</h3>
-          <p className="text-gray-400 mb-3">
-            Don’t miss to subscribe to our new feeds. Kindly fill the form
-            below.
-          </p>
-          <form className="flex flex-col sm:flex-row">
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full p-2 rounded-t sm:rounded-l sm:rounded-t-none bg-gray-700 text-white focus:outline-none"
-            />
-            <button className="bg-[#2b9150] p-2 rounded-b sm:rounded-r sm:rounded-b-none hover:bg-[#650108] transition-colors duration-200 ease-in-out">
-              <i className="fa fa-paper-plane"></i>
-            </button>
-          </form>
+        <div className="flex flex-col">
+          {/* Contact Information Section */}
+          <div className="flex items-start mb-4">
+            <i className="fa-solid fa-location-dot text-2xl lg:text-3xl text-[#206e3d] mr-4"></i>
+            <div>
+              <a
+                href="https://maps.app.goo.gl/3XPDYJXN1Bn9kXQn8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <h3 className="text-[#2b9150] font-bold mb-3">Find us</h3>
+                <p className="text-gray-400">
+                  SGC Office S#23, 3rd Floor, Malikabad Centre near 6th Rd,
+                  Murree Rd, Rawalpindi
+                </p>
+              </a>
+            </div>
+          </div>
+          <div className="flex items-start mb-4">
+            <i className="fa-solid fa-phone text-2xl lg:text-3xl text-[#2b9150] mr-4"></i>
+            <div>
+              <h3 className="text-[#2b9150] font-bold mb-3">Call us</h3>
+              <p className="text-gray-400">+92 332 5900041</p>
+            </div>
+          </div>
+          <div className="flex items-start mb-4">
+            <i className="fa-solid fa-envelope-open text-2xl lg:text-3xl text-[#2b9150] mr-4"></i>
+            <div>
+              <h3 className="text-[#2b9150] font-bold mb-3">Mail us</h3>
+              <p className="text-gray-400">tameer2k23@gmail.com</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -165,23 +151,6 @@ const Footer = () => {
           Copyright © 2024. All Rights Reserved{" "}
           <span className="text-[#2b9150]">Save Gaza Campaign</span>
         </p>
-        <div className="space-x-4">
-          <Link href="#" className="text-gray-400 hover:text-white">
-            Home
-          </Link>
-          <Link href="#" className="text-gray-400 hover:text-white">
-            Terms
-          </Link>
-          <Link href="#" className="text-gray-400 hover:text-white">
-            Privacy
-          </Link>
-          <Link href="#" className="text-gray-400 hover:text-white">
-            Policy
-          </Link>
-          <Link href="#" className="text-gray-400 hover:text-white">
-            Contact
-          </Link>
-        </div>
       </div>
     </footer>
   );

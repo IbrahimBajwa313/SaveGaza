@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeroBanner = () => {
   const phoneNumber = "+923325000418";
-  const message = "AsslamoAlikum! I am contacting you through SGC Site. I want to collaborate in Gaza Relief Activities. Please send the details and the account number.";
+  const message = "AsslamoAlikum! I am contacting you through SGC Site.";
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   
   const bannerRef = useRef(null);
@@ -32,8 +32,7 @@ const HeroBanner = () => {
       ref={bannerRef}
       className="relative h-[90vh] bg-cover bg-center poppins overflow-hidden no-scrollbar"
       style={{
-        backgroundImage: "url('/banner1.png')",
-        backgroundPosition: "center top",
+        backgroundImage: "url('/SGC-Hero.jpg')", 
         overflow: "hidden",
       }}
     >
