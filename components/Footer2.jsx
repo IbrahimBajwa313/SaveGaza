@@ -132,7 +132,7 @@ const Footer = () => {
             <i className="fa-solid fa-phone text-2xl lg:text-3xl text-[#2b9150] mr-4"></i>
             <div>
               <h3 className="text-[#2b9150] font-bold mb-3">Call us</h3>
-              <p className="text-gray-400">+92 332 5900041</p>
+              <p className="text-gray-400">+923325900041</p>
             </div>
           </div>
           <div className="flex items-start mb-4">
