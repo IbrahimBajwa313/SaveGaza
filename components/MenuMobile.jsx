@@ -12,11 +12,10 @@ import { BsChevronDown,BsChevronUp } from 'react-icons/bs'
 const data = [
     { id: 1, name: 'Home', url: '/' },
     { id: 2, name: 'About Us', url: '/about' },
-    { id: 3, name: 'SGC Activities', url: 'https://sgc-blogs-4ryc.vercel.app/category/6789c952a27a0be46a8f3cef' },
+    { id: 3, name: 'SGC Gaza Activities', url: 'https://sgc-blogs-3.vercel.app/category/6762389a587d34c99391e320' },
     { id: 4, name: 'Aid to Gaza', url: 'https://sgc-relief-activities-2st2.vercel.app/' }, 
-    { id: 5, name: 'SGC Blogs', url: 'https://sgc-blogs-4ryc.vercel.app/' }, 
+    { id: 5, name: 'SGC Blogs', url: 'https://sgc-blogs-3.vercel.app/' }, 
 ];
- 
 
 // Objects starts here ( Menu logic )showSortMenu={showSortMenu}
         
