@@ -5,10 +5,10 @@
 @import './Poppins.css';
 @import './animations.css';
 
-/* :root {
+:root {
   --background: #ffffff;
-  --foreground: #171717;
-} */
+  --foreground: #0b0b0b;
+}
 
 body {
   color: var(--foreground);
