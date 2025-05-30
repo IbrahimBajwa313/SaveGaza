@@ -37,15 +37,15 @@ export default function Home() {
          <HowYouHelp />
         {/* <About /> */}
         {/* <Chatbot /> */}
-        {/* <DeathToll /> */}
+        <DeathToll />
         {/* <DonationComponent /> */}
         {/* <section id="how-you-can-help">
         </section> */}
         <UnitingPak />
-        <Video />
+        {/* <Video /> */}
         <FAQs />
-        {/* <ContactAndSubscribe /> */}
-        {/* <Reviews /> */}
+        <ContactAndSubscribe />
+        <Reviews />
         <Team /> 
       </Wrapper>
     </main>
